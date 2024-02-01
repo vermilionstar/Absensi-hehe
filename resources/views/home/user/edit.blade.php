@@ -1,6 +1,7 @@
 @extends('layouts.master')
-@section('title','Halaman Edit Data User')
+@section('title','User')
 @section('content')
+<br>
 <div class="content-wrapper">
     <section class="content">
         <div class="container-fluid">
@@ -8,34 +9,40 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Edit Data User</h4>
+                            <h2>Edit Data User</h2>
                         </div>
                         <div class="card-body">
                             <form action="/user/{{$user->id}}/update" method="post">
-                            @csrf
-                            <div class="form-group">
-                                <label for="">Nama</label>
-                                <input type="text" class="form-control" value="{{$user->nama_admin}}" name="nama_admin" placeholder="Masukan Untuk Nama" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Username</label>
-                                <input type="text" class="form-control" value="{{$user->username}}" name="username" placeholder="Masukan Untuk Username" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Password</label>
-                                <input type="password" class="form-control" value="{{$user->password}}" name="password" placeholder="Masukan Untuk Password" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Level</label>
-                                <select name="level" class="form-control">
-                                    <option value="Admin">Admin</option>
-                                    <option value="Super Admin">Super Admin</option>
-                                    <option value="Ultimate Admin">Ultimate Admin</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                            <a href="/user" class="btn btn-secondary">Cancel</a>
-                        </form>
+                                @csrf
+                              
+                                <div class="form-group">
+                                    <label for="" class="form-label">Nama</label>
+                                    <input type="text" name="nama_admin" value="{{$user->nama_admin}}" id="" class="form-control @error('nama_admin') is-invalid @enderror"  aria-describedby="helpId">
+                                    @error('nama_admin')
+                                    <div class="invalidate-feedback">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="form-label">Username</label>
+                                    <input type="text" name="username" value="{{$user->username}}" id="" class="form-control @error('username') is-invalid @enderror" aria-describedby="helpId">
+                                    @error('username')
+                                    <div class="invalidate-feedback">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="form-label">Level</label><select name="level" class="form-control" value="{{old('level')}}" id="">
+                                        <option value="Admin">Admin</option>
+                                        <option value="Kasir">Pembimbing</option>
+                                        <option value="Siswa">Siswa</option>
+                                    </select>   
+                                </div>
+                                <button type="submit" class="btn btn-info text-dark">Save</button>
+                                <a href="/user" type="reset" class="btn btn-secondary text-dark">cancel</a>
+                            </form>
                         </div>
                     </div>
                 </div>
