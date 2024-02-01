@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Jadwal;
+use App\Models\Karyawan;
+// use Illuminate\Support\Facades\Auth;
 
 class JadwalController extends Controller
 {
@@ -13,7 +16,13 @@ class JadwalController extends Controller
      */
     public function index()
     {
-        //
+        // if(Auth()->User()->level !='admin'){
+        //     Auth::logout();
+        //     return redirect('/login')->with('error','Anda Tidak Memiliki Hak Akses, Silahkan Login Kembali');
+        // }else{
+        $jadwal = Jadwal::all();
+        return view('home.jadwal.index', compact(['jadwal']));
+        // }
     }
 
     /**
@@ -23,7 +32,8 @@ class JadwalController extends Controller
      */
     public function create()
     {
-        //
+        $karyawan = Karyawan::all();
+        return view('home.jadwal.tambah', compact(['karyawan']));
     }
 
     /**
@@ -34,7 +44,8 @@ class JadwalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Jadwal::create($request->all());
+        return redirect('/jadwal');
     }
 
     /**
@@ -45,7 +56,9 @@ class JadwalController extends Controller
      */
     public function show($id)
     {
-        //
+        $karyawan = Karyawan::all();
+        $jadwal = Jadwal::find($id);
+        return view('home.jadwal.edit', compact(['jadwal'], 'karyawan'));
     }
 
     /**
@@ -68,7 +81,9 @@ class JadwalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $jadwal = Jadwal::find($id);
+        $jadwal->update($request->all());
+        return redirect('/jadwal');
     }
 
     /**
@@ -79,6 +94,8 @@ class JadwalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $jadwal = Jadwal::find($id);
+        $jadwal->delete();
+        return redirect('/jadwal');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Karyawan;
 
 class KaryawanController extends Controller
 {
@@ -13,7 +14,8 @@ class KaryawanController extends Controller
      */
     public function index()
     {
-        //
+        $karyawan = Karyawan::All();
+        return view('home.karyawan.index', compact(['karyawan']));
     }
 
     /**
@@ -23,7 +25,7 @@ class KaryawanController extends Controller
      */
     public function create()
     {
-        //
+        return view('home.karyawan.tambah');
     }
 
     /**
@@ -34,7 +36,20 @@ class KaryawanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $validateData = $request->validate([
+        //     'nama' => 'required',
+        //     'username' => 'required|unique:users',
+        //     'password' => 'required|min:5|max:20',
+        // ]);
+
+        Karyawan::create([
+            'nama'=> $request->nama,
+            'jabatan'=> $request->jabatan,
+            'departemen'=> $request->departemen,
+            'notlp'=> $request->notlp,
+            'alamat'=> $request->alamat,
+            $request->except(['_token']),
+        ]);return redirect('/karyawan');
     }
 
     /**
@@ -45,7 +60,8 @@ class KaryawanController extends Controller
      */
     public function show($id)
     {
-        //
+        $karyawan = Karyawan::find($id);
+        return view('home.karyawan.edit',compact(['karyawan']));
     }
 
     /**
@@ -56,7 +72,7 @@ class KaryawanController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -68,7 +84,15 @@ class KaryawanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $karyawan = Karyawan::find($id);
+        $karyawan->update([
+            'nama'=> $request->nama,
+            'jabatan'=> $request->jabatan,
+            'departemen'=> $request->departemen,
+            'notlp'=> $request->notlp,
+            'alamat'=> $request->alamat,
+        $request->except(['_token']),
+    ]);return redirect('/karyawan');
     }
 
     /**
@@ -79,6 +103,8 @@ class KaryawanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $karyawan = Karyawan::find($id);
+        $karyawan->delete();
+        return redirect('/karyawan');
     }
 }
