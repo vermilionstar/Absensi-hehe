@@ -9,8 +9,8 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header bg-white">
-                                <h2>Data User</h2>
-                                <a href="/user/tambah" class="btn btn-primary text-dark">Tambah Data</a>
+                                <h2>Data Karyawan</h2>
+                                <a href="/karyawan/tambah" class="btn btn-primary text-dark">Tambah Data</a>
                                 {{-- </div>
                         <div class="card-body bg-gradient-secondary"> --}}
                                 <div class="table-responsive">
@@ -19,27 +19,28 @@
                                             <tr align="center">
                                                 <th>ID</th>
                                                 <th>Nama</th>
-                                                <th>Username</th>
-                                                <th>Level</th>
+                                                <th>Jabatan</th>
+                                                <th>Departemen</th>
+                                                <th>No Telepon</th>
+                                                <th>Alamat</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($user as $u)
+                                            @foreach ($karyawan as $k)
                                                 <tr align="center">
-                                                    <td>{{ $u->id }}</td>
-                                                    <td>{{ $u->nama_admin}}</td>
-                                                    <td>{{ $u->username }}</td>
-                                                    <td>{{ $u->level }}</td>
+                                                    <td>{{ $k->id }}</td>
+                                                    <td>{{ $k->nama}}</td>
+                                                    <td>{{ $k->jabatan }}</td>
+                                                    <td>{{ $k->departemen }}</td>
+                                                    <td>{{ $k->notlp }}</td>
+                                                    <td>{{ $k->alamat }}</td>
                                                     <td>
-                                                        <a href="/user/{{ $u->id }}/edit"
+                                                        <a href="/karyawan/{{ $k->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>
-                                                        <a href="/user/{{ $u->id }}/delete"
+                                                        <a href="/karyawan/{{ $k->id }}/delete"
                                                             class="btn btn-outline-danger"
                                                             onclick="return confirm('Apakah Anda Yakin Ingin Mengahpus ini?')">Delete</a>
-                                                            <a href="/password/change"
-                                                                class="btn btn-outline-primary"
-                                                                >chance</a>
                                                     </td>
                                                 </tr>
                                             @endforeach

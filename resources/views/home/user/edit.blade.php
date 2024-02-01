@@ -17,8 +17,8 @@
                               
                                 <div class="form-group">
                                     <label for="" class="form-label">Nama</label>
-                                    <input type="text" name="nama" value="{{$user->nama}}" id="" class="form-control @error('nama') is-invalid @enderror"  aria-describedby="helpId">
-                                    @error('nama')
+                                    <input type="text" name="nama_admin" value="{{$user->nama_admin}}" id="" class="form-control @error('nama_admin') is-invalid @enderror"  aria-describedby="helpId">
+                                    @error('nama_admin')
                                     <div class="invalidate-feedback">
                                         {{$message}}
                                     </div>
