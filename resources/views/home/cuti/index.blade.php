@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Karyawan')
+@section('title', 'Cuti')
 @section('content')
     <br>
     <div class="content-wrapper">
@@ -9,8 +9,8 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header bg-white">
-                                <h2>Data User</h2>
-                                <a href="/user/tambah" class="btn btn-primary text-dark">Tambah Data</a>
+                                <h2>Data Cuti</h2>
+                                <a href="/cuti/tambah" class="btn btn-primary text-dark">Tambah Data</a>
                                 {{-- </div>
                         <div class="card-body bg-gradient-secondary"> --}}
                                 <div class="table-responsive">
@@ -18,28 +18,27 @@
                                         <thead>
                                             <tr align="center">
                                                 <th>ID</th>
-                                                <th>Nama</th>
-                                                <th>Username</th>
-                                                <th>Level</th>
+                                                <th>Id Karyawan</th>
+                                                <th>Tanggal Mulai</th>
+                                                <th>Tanggal Selesai</th>
+                                                <th>Jenis Cuti</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($user as $u)
+                                            @foreach ($cuti as $c)
                                                 <tr align="center">
-                                                    <td>{{ $u->id }}</td>
-                                                    <td>{{ $u->nama_admin}}</td>
-                                                    <td>{{ $u->username }}</td>
-                                                    <td>{{ $u->level }}</td>
+                                                    <td>{{ $c->id }}</td>
+                                                    <td>{{ $c->karyawan->id}} - {{$c->karyawan->nama}}</td>
+                                                    <td>{{ $c->tanggal_mulai }}</td>
+                                                    <td>{{ $c->tanggal_mulai }}</td>
+                                                    <td>{{ $c->jenis_cuti }}</td>
                                                     <td>
-                                                        <a href="/user/{{ $u->id }}/edit"
+                                                        <a href="/cuti/{{ $c->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>
-                                                        <a href="/user/{{ $u->id }}/delete"
+                                                        <a href="/cuti/{{ $c->id }}/delete"
                                                             class="btn btn-outline-danger"
                                                             onclick="return confirm('Apakah Anda Yakin Ingin Mengahpus ini?')">Delete</a>
-                                                            <a href="/password/change"
-                                                                class="btn btn-outline-primary"
-                                                                >chance</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
