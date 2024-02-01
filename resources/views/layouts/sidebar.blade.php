@@ -74,7 +74,7 @@
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="#">Kelola Siswa</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/user">Kelola Data User</a></li>
             <li class="nav-item"> <a class="nav-link" href="#">Kelola Spp</a></li>
             <li class="nav-item"> <a class="nav-link" href="#">Kelola Kasir</a></li>
           </ul>
