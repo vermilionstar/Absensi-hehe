@@ -14,7 +14,7 @@
                         <div class="card-body">
                             <form action="/karyawan/{{$karyawan->id}}/update" method="post">
                                 @csrf
-                              
+                                
                                 <div class="form-group">
                                     <label for="" class="form-label">Nama</label>
                                     <input type="text" name="nama" value="{{$karyawan->nama}}" id="" class="form-control @error('nama') is-invalid @enderror"  aria-describedby="helpId">

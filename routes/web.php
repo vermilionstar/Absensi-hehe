@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\CutiController;
-use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\jadwalController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LoginController;
 

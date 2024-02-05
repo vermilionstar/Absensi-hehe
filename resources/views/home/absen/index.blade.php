@@ -30,7 +30,7 @@
                                             @foreach( $absen as $a)
                                                 <tr align="center">
                                                     <td>{{ $a->id }}</td>
-                                                    <td>{{ $a->karyawan->id}} - {{$a->karyawan->nama}}</td>
+                                                    <td>{{ $a->karyawan->jabatan}} - {{ $a->karyawan->nama}}</td>
                                                     <td>{{ $a->tanggal }}</td>
                                                     <td>{{ $a->jam_masuk }}</td>
                                                     <td>{{ $a->jam_pulang }}</td>

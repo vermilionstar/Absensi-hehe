@@ -59,7 +59,7 @@
                                     </div>
                                     @enderror
                                 </div>
-                                <button type="submit" class="btn btn-info text-dark">Save</button>
+                                <button type="submit" class="btn btn-info text-dark">Simpan</button>
                                 <a href="/karyawan" type="reset" class="btn btn-secondary text-dark">cancel</a>
                             </form>
                         </div>

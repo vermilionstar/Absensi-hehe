@@ -18,8 +18,8 @@
                                         <thead>
                                             <tr align="center">
                                                 <th>ID</th>
-                                                <th>Id Karyawan</th>
-                                                <th>ID User</th>
+                                                <th>Karyawan</th>
+                                                <th>Admin</th>
                                                 <th>Tanggal</th>
                                                 <th>status</th>
                                                 <th>catatan</th>

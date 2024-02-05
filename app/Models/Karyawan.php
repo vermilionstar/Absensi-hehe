@@ -9,6 +9,6 @@ class Karyawan extends Model
 {
     protected $fillable = ['nama','jabatan','departemen','notlp','alamat'];
     public function Karyawan(){
-        return $this->hasMany(Karyawan::class, 'id','id');
+        return $this->hasMany(Karyawan::class, 'id_karyawan','id');
     }
 }

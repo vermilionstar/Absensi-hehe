@@ -31,9 +31,9 @@ class JadwalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
         $karyawan = Karyawan::all();
-        return view('home.jadwal.tambah', compact(['karyawan']));
+        return view('home.jadwal.tambah', compact('karyawan'));
     }
 
     /**

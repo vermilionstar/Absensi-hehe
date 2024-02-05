@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h2>Tambah Data Absensi</h2>
+                            <h2>Tambah Data Absen</h2>
                         </div>
                         <div class="card-body">
                             <form action="/absen/simpan" method="post">

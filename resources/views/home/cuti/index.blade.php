@@ -11,6 +11,7 @@
                             <div class="card-header ">
                                 <h2>Data Cuti</h2>
                                 <a href="/cuti/tambah" class="btn btn-primary text-dark">Tambah Data</a>
+                                </center>
                                 {{-- </div>
                         <div class="card-body bg-gradient-secondary"> --}}
                                 <div class="table-responsive">
@@ -21,7 +22,7 @@
                                                 <th>Id Karyawan</th>
                                                 <th>Tanggal Mulai</th>
                                                 <th>Tanggal Selesai</th>
-                                                <th>Jenis Cuti</th>
+                                                <th>Alasan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -29,7 +30,7 @@
                                             @foreach($cuti as $c)
                                                 <tr align="center">
                                                     <td>{{ $c->id }}</td>
-                                                    <td>{{ $c->karyawan->id}} - {{$c->karyawan->nama}}</td>
+                                                    <td>{{ $c->karyawan->jabatan}} - {{ $c->karyawan->nama}}</td>
                                                     <td>{{ $c->tanggal_mulai }}</td>
                                                     <td>{{ $c->tanggal_mulai }}</td>
                                                     <td>{{ $c->alasan }}</td>
