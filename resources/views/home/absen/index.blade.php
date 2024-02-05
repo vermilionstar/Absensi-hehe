@@ -10,7 +10,7 @@
                         <div class="card">
                             <div class="card-header ">
                                 <h2>Data Absensi</h2>
-                                <a href="/absensi/tambah" class="btn btn-primary text-dark">Tambah Data</a>
+                                <a href="/absen/tambah" class="btn btn-primary text-dark">Tambah Data</a>
                                 {{-- </div>
                         <div class="card-body bg-gradient-secondary"> --}}
                                 <div class="table-responsive">
@@ -27,7 +27,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($absensi as $a)
+                                            @foreach( $absen as $a)
                                                 <tr align="center">
                                                     <td>{{ $a->id }}</td>
                                                     <td>{{ $a->karyawan->id}} - {{$a->karyawan->nama}}</td>
@@ -36,9 +36,9 @@
                                                     <td>{{ $a->jam_pulang }}</td>
                                                     <td>{{ $a->kehadiran }}</td>
                                                     <td>
-                                                        <a href="/absensi/{{ $a->id }}/edit"
+                                                        <a href="/absen/{{ $a->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>
-                                                        <a href="/absensi/{{ $a->id }}/delete"
+                                                        <a href="/absen/{{ $a->id }}/delete"
                                                             class="btn btn-outline-danger"
                                                             onclick="return confirm('Apakah Anda Yakin Ingin Mengahpus ini?')">Delete</a>
                                                     </td>

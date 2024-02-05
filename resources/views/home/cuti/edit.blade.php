@@ -43,12 +43,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Jenis Cuti</label>
-                                    <input type="text" name="jenis_cuti" value="{{$cuti->jenis_cuti}}" id="" class="form-control @error('jenis_cuti') is-invalid @enderror" aria-describedby="helpId">
-                                    @error('jenis_cuti')
-                                    <div class="invalidate-feedback">
-                                        {{$message}}
-                                    </div>
-                                    @enderror
+                                    <input type="text" name=    "alasan" id="" class="form-control" aria-describedby="helpId">
+                                   
                                 </div>
                                
                                 <button type="submit" class="btn btn-info text-dark">Save</button>

@@ -29,10 +29,10 @@
                                         <tbody>
                                             @foreach ($laporan as $l)
                                                 <tr align="center">
-                                                    <td>{{ $l->id }}</td>
+                                                    <td>{{ $l->id }}</td>   
                                                     <td>{{ $l->karyawan->id}} - {{$l->karyawan->nama}}</td>
-                                                    <td>{{ $l->user->id}} - {{$l->user->nama}}</td>
-                                                    <td>{{ $l->tanggal }}</td>
+                                                    <td>{{ $l->user->id}} - {{$l->user->nama_admin}}</td>
+                                                    <td>{{ $l->tanggall }}</td>
                                                     <td>{{ $l->status }}</td>
                                                     <td>{{ $l->catatan }}</td>
                                                     <td>

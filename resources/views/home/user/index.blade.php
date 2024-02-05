@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Karyawan')
+@section('title', 'User')
 @section('content')
     <br>
     <div class="content-wrapper">
@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header ">
+                            <div class="card-header">
                                 <h2>Data User</h2>
                                 <a href="/user/tambah" class="btn btn-primary text-dark">Tambah Data</a>
                                 {{-- </div>

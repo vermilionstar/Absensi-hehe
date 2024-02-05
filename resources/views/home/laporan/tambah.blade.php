@@ -12,7 +12,7 @@
                             <h2>Tambah Data Laporan Kehadiran</h2>
                         </div>
                         <div class="card-body">
-                            <form action="/laporan/save" method="post">
+                            <form action="/laporan/simpan" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label for="" class="form-label">ID Karyawan</label>
@@ -24,16 +24,16 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">ID User</label>
-                                    <select class="form-control" name="id_user" id="id_user">
+                                    <select class="form-control" name="id_admin" id="id_admin">
                                         @foreach($user as $u)
-                                        <option value="{{$u->id}}">{{$u->id}} - {{$u->nama}}</option>
+                                        <option value="{{$u->id}}">{{$u->id}} - {{$u->nama_admin}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Tanggal</label>
-                                    <input type="date" name="tanggal" id="" class="form-control @error('tanggal') is-invalid @enderror" placeholder="Masukan tanggal" value="{{old('tanggal')}}" aria-describedby="helpId">
-                                    @error('tanggal')
+                                    <input type="date" name="tanggall" id="" class="form-control @error('tanggall') is-invalid @enderror" placeholder="Masukan tanggal" value="{{old('tanggall')}}" aria-describedby="helpId">
+                                    @error('tanggall')
                                     <div class="invalidate-feedback">
                                         {{$message}}
                                     </div>

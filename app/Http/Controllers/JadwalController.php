@@ -44,7 +44,13 @@ class JadwalController extends Controller
      */
     public function store(Request $request)
     {
-        Jadwal::create($request->all());
+        Jadwal::create([
+            'id_karyawan'=> $request->id_karyawan,
+            'tgl_kerja'=> $request->tgl_kerja,
+            'jam_msk'=> $request->jam_msk,
+            'jam_plg'=> $request->jam_plg,
+            $request->except(['_token']),
+        ]);
         return redirect('/jadwal');
     }
 
@@ -82,8 +88,14 @@ class JadwalController extends Controller
     public function update(Request $request, $id)
     {
         $jadwal = Jadwal::find($id);
-        $jadwal->update($request->all());
-        return redirect('/jadwal');
+        $jadwal->update([
+            'id_karyawan'=> $request->id_karyawan,
+            'tgl_kerja'=> $request->tgl_kerja,
+            'jam_msk'=> $request->jam_msk,
+            'jam_plg'=> $request->jam_plg,
+            $request->except(['_token']),
+        ]);
+        return redirect('/jadwal')->with('update', 'data telah diupdate');
     }
 
     /**

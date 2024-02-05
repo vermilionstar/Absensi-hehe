@@ -30,9 +30,9 @@
                                                 <tr align="center">
                                                     <td>{{ $j->id }}</td>
                                                     <td>{{ $j->karyawan->id}} - {{$j->karyawan->nama}}</td>
-                                                    <td>{{ $j->tanggal }}</td>
-                                                    <td>{{ $j->jam_masuk }}</td>
-                                                    <td>{{ $j->jam_pulang }}</td>
+                                                    <td>{{ $j->tgl_kerja }}</td>
+                                                    <td>{{ $j->jam_msk }}</td>
+                                                    <td>{{ $j->jam_plg }}</td>
                                                     <td>
                                                         <a href="/jadwal/{{ $j->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>

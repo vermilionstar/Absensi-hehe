@@ -12,7 +12,7 @@
                             <h2>Tambah Data Karyawan</h2>
                         </div>
                         <div class="card-body">
-                            <form action="/karyawan/save" method="post">
+                            <form action="/karyawan/simpan" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label for="" class="form-label">Nama</label>

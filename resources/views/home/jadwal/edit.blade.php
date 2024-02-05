@@ -25,8 +25,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Tanggal</label>
-                                    <input type="date" name="tanggal" value="{{$jadwal->tanggal}}" id="" class="form-control @error('tanggal') is-invalid @enderror" aria-describedby="helpId">
-                                    @error('tanggal')
+                                    <input type="date" name="tgl_kerja" value="{{$jadwal->tgl_kerja}}" id="" class="form-control @error('tgl_kerja') is-invalid @enderror" aria-describedby="helpId">
+                                    @error('tgl_kerja')
                                     <div class="invalidate-feedback">
                                         {{$message}}
                                     </div>
@@ -34,8 +34,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Jam Masuk</label>
-                                    <input type="time" name="jam_masuk" value="{{$jadwal->jam_masuk}}" id="" class="form-control @error('jam_masuk') is-invalid @enderror" aria-describedby="helpId">
-                                    @error('jam_masuk')
+                                    <input type="time" name="jam_msk" value="{{$jadwal->jam_msk}}" id="" class="form-control @error('jam_msk') is-invalid @enderror" aria-describedby="helpId">
+                                    @error('jam_msk')
                                     <div class="invalidate-feedback">
                                         {{$message}}
                                     </div>
@@ -43,8 +43,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Jam Pulang</label>
-                                    <input type="time" name="jam_pulang" value="{{$jadwal->jam_pulang}}" id="" class="form-control @error('jam_pulang') is-invalid @enderror" aria-describedby="helpId">
-                                    @error('jam_pulang')
+                                    <input type="time" name="jam_plg" value="{{$jadwal->jam_plg}}" id="" class="form-control @error('jam_plg') is-invalid @enderror" aria-describedby="helpId">
+                                    @error('jam_plg')
                                     <div class="invalidate-feedback">
                                         {{$message}}
                                     </div>

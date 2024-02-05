@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-
+use  Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     /**
@@ -14,8 +14,14 @@ class UserController extends Controller
      */
     public function index()
     {
+         if(Auth()->user()->level !='Admin'){
+            Auth::logout();
+            return redirect('/login')->with('error','anda tidak memiliki akses');
+       
+        }else{
         $user = User::all();
-        return view('home.index.index', compact(['user']));
+        return view('home.user.index', compact(['user']));
+           }
     }
 
     /**
@@ -36,14 +42,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-
+        $validateData = $request->validate([
+            'nama_admin' => 'required',
+            'username' => 'required|unique:users,column,except,id',
+            'password' => 'required|min:5|max:20',
+            'level' => 'required'
+        ]);
         User::create([
             'nama_admin'=> $request->nama_admin,
             'username'=> $request->username,
             'password'=> bcrypt($request->password),
             'level'=> $request->level,
             $request->except(['_token']),
-        ]);return redirect('/user');
+        ]);
+        return redirect('/user')->with('message','data telah tersimpan');
     }
 
     /**
@@ -78,6 +90,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+    
         $user = User::find($id);
         $user->update([
             'nama_admin'=> $request->nama_admin,
@@ -85,7 +98,8 @@ class UserController extends Controller
             'password'=> bcrypt($request->password),
             'level'=> $request->level,
         $request->except(['_token']),
-    ]);return redirect('/user');
+    ]);
+    return redirect('/user')->with('update','data telah diupdate');
     }
 
     /**
@@ -98,6 +112,6 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        return redirect('/user');
+        return redirect('/user')->with('delete','data telah dihapus');
     }
 }
