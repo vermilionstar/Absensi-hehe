@@ -7,6 +7,7 @@ use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\CutiController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\LoginController;
 
 
 /*
@@ -19,9 +20,13 @@ use App\Http\Controllers\LaporanController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/l', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/PostLogin', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
-
-Route::get('/', function () {
+Route::middleware(['auth'])->group(function () {
+Route::get('/dashboard', function () {
     return view('home.dashboard');
 });
 
@@ -54,15 +59,17 @@ Route::post('/cuti/{id}/update',[CutiController::class,'update']);
 Route::get('/cuti/{id}/hapus',[CutiController::class,'destroy']);
 
 Route::get('/jadwal',[JadwalController::class,'index']);
-Route::get('/jadwal/tambah',[JadwalController::class,'store']);
+Route::get('/jadwal/tambah',[JadwalController::class,'create']);
+Route::post('/jadwal/simpan',[JadwalController::class,'store']);
 Route::get('/jadwal/{id}/edit',[JadwalController::class,'show']);
 Route::post('/jadwal/{id}/update',[JadwalController::class,'update']);
 Route::get('/jadwal/{id}/hapus',[JadwalController::class,'destroy']);
 
 Route::get('/laporan',[LaporanController::class,'index']);
-Route::get('/laporan/tambah',[LaporanController::class,'store']);
+Route::get('/laporan/tambah',[LaporanController::class,'create']);
+Route::post('/laporan/simpan',[LaporanController::class,'store']);
 Route::get('/laporan/{id}/edit',[LaporanController::class,'show']);
 Route::post('/laporan/{id}/update',[LaporanController::class,'update']);
 Route::get('/laporan/{id}/hapus',[LaporanController::class,'destroy']);
 
-?>
+});

@@ -36,11 +36,6 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $request->validate([
-            'nama_admin' => 'required',
-            'username' => 'required|unique:users',
-            'password' => 'required|min:5|max:20',
-        ]);
 
         User::create([
             'nama_admin'=> $request->nama_admin,
