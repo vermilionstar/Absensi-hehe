@@ -9,7 +9,7 @@
 
 body {
     background-color: #c9d6ff;
-    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    background: linear-gradient(to right, #545454, #e4e4e4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,24 +128,24 @@ a {
 }
 .btn-primary {
     --bs-btn-color: #000;
-    --bs-btn-bg: #1374F2;
-    --bs-btn-border-color: #1374F2;
+    --bs-btn-bg: #1a1d21;
+    --bs-btn-border-color: #454343;
     --bs-btn-hover-color: #000;
-    --bs-btn-hover-bg: #1374F2;
-    --bs-btn-hover-border-color: #1374F2;
+    --bs-btn-hover-bg: #454343;
+    --bs-btn-hover-border-color: #454343;
     --bs-btn-focus-shadow-rgb: 80, 97, 194;
     --bs-btn-active-color: #000;
-    --bs-btn-active-bg: #1374F2;
-    --bs-btn-active-border-color: #1374F2;
+    --bs-btn-active-bg: #454343;
+    --bs-btn-active-border-color: #454343;
     --bs-btn-active-shadow: none;
     --bs-btn-disabled-color: #000;
-    --bs-btn-disabled-bg: #1374F2;
-    --bs-btn-disabled-border-color: #1374F2;
+    --bs-btn-disabled-bg: #454343;
+    --bs-btn-disabled-border-color: #454343;
 }
 
 .container button {
-    background-color: #1374F2;
-    background: linear-gradient(to right, #1374F2, #1374F2);
+    background-color: #fbfdff;
+    background: linear-gradient(to right, #454343, #000000);
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -159,7 +159,7 @@ a {
 }
 
 .container-fluid button {
-    background-color: #1374F2;
+    background-color: #454343;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -303,9 +303,9 @@ a {
 }
 
 .toggle {
-    background-color: #1374F2;
+    background-color: #dfdfdf;
     height: 100%;
-    background: linear-gradient(to right, #1374F2, #1374F2);
+    background: linear-gradient(to right, #858585, #0b0b0b);
     color: #fff;
     position: relative;
     left: -100%;
