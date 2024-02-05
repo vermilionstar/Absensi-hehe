@@ -57,7 +57,7 @@
         <span class="nav-link">Navigation</span>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/">
           <span class="menu-icon">
             <i class="mdi mdi-speedometer"></i>
           </span>
@@ -75,8 +75,11 @@
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="/user">Kelola Data User</a></li>
-            <li class="nav-item"> <a class="nav-link" href="#">Kelola Spp</a></li>
-            <li class="nav-item"> <a class="nav-link" href="#">Kelola Kasir</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/karyawan">Kelola Data Karyawan</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/absen">Kelola Data Absensi</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/cuti">Kelola Data Cuti</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/jadwal">Kelola Data Jadwal Kerja</a></li>
+            <li class="nav-item"> <a class="nav-link" href="/laporan">Kelola Data Laporan Kehadiran</a></li>
           </ul>
         </div>
       </li>

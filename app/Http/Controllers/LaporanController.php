@@ -46,7 +46,14 @@ class LaporanController extends Controller
      */
     public function store(Request $request)
     {
-        Laporan::create($request->all());
+        Laporan::create([
+            'id_karyawan'=> $request->id_karyawan,
+            'id_admin'=> $request->id_admin,
+            'tanggall'=> $request->tanggall,
+            'status'=> $request->status,
+            'catatan'=> $request->catatan,
+            $request->except(['_token']),
+        ]);
         return redirect('/laporan');
     }
 
@@ -85,7 +92,14 @@ class LaporanController extends Controller
     public function update(Request $request, $id)
     {
         $laporan = Laporan::find($id);
-        $laporan->update($request->all());
+        $laporan->update([
+            'id_karyawan'=> $request->id_karyawan,
+            'id_admin'=> $request->id_admin,
+            'tanggall'=> $request->tanggall,
+            'status'=> $request->status,
+            'catatan'=> $request->catatan,
+            $request->except(['_token']),
+        ]);
         return redirect('/laporan');
     }
 

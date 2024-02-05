@@ -34,11 +34,11 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="form-label">Level</label><select name="level" class="form-control" value="{{old('level')}}" id="">
+                                    <label for="" class="form-label">Level</label>
+                                    <select name="level" class="form-control" value="{{old('level')}}" id="">
                                         <option value="Admin">Admin</option>
-                                        <option value="Kasir">Pembimbing</option>
-                                        <option value="Siswa">Siswa</option>
-                                    </select>   
+                                        <option value="Super Admin">Super Admin</option>
+                                    </select>
                                 </div>
                                 <button type="submit" class="btn btn-info text-dark">Save</button>
                                 <a href="/user" type="reset" class="btn btn-secondary text-dark">cancel</a>

@@ -12,20 +12,20 @@
                             <h2>Tambah Data Jadwal</h2>
                         </div>
                         <div class="card-body">
-                            <form action="/jadwal/save" method="post">
+                            <form action="/jadwal/simpan" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label for="" class="form-label">ID Karyawan</label>
                                     <select class="form-control" name="id_karyawan" id="id_karyawan">
-                                        @foreach($Karyawan as $k)
+                                        @foreach($karyawan as $k)
                                         <option value="{{$k->id}}">{{$k->id}} - {{$k->nama}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Tanggal</label>
-                                    <input type="date" name="tanggal" id="" class="form-control @error('tanggal') is-invalid @enderror" placeholder="Masukan tanggal" value="{{old('tanggal')}}" aria-describedby="helpId">
-                                    @error('tanggal')
+                                    <input type="date" name="tgl_kerja" id="" class="form-control @error('tgl_kerja') is-invalid @enderror" placeholder="Masukan tanggal" value="{{old('tgl_kerja')}}" aria-describedby="helpId">
+                                    @error('tgl_kerja')
                                     <div class="invalidate-feedback">
                                         {{$message}}
                                     </div>
@@ -33,8 +33,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Jam Masuk</label>
-                                    <input type="time" name="jam_masuk" id="" class="form-control @error('jam_masuk') is-invalid @enderror" placeholder="Masukan Jam Masuk" value="{{old('jam_masuk')}}" aria-describedby="helpId" >
-                                    @error('jam_masuk')
+                                    <input type="time" name="masuk" id="" class="form-control @error('masuk') is-invalid @enderror" placeholder="Masukan Jam Masuk" value="{{old('masuk')}}" aria-describedby="helpId" >
+                                    @error('masuk')
                                     <div class="invalidate-feedback">
                                         {{$message}}
                                     </div>
@@ -42,8 +42,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Jam Pulang</label>
-                                    <input type="time" name="jam_pulang" id="" class="form-control @error('jam_pulang') is-invalid @enderror" placeholder="Masukan Jam Pulang" value="{{old('jam_pulang')}}" aria-describedby="helpId">
-                                    @error('jam_pulang')
+                                    <input type="time" name="pulang" id="" class="form-control @error('pulang') is-invalid @enderror" placeholder="Masukan Jam Pulang" value="{{old('pulang')}}" aria-describedby="helpId">
+                                    @error('pulang')
                                     <div class="invalidate-feedback">
                                         {{$message}}
                                     </div>

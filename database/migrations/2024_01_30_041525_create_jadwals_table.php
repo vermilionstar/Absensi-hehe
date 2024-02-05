@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->integer('id_karyawan');
             $table->date('tgl_kerja');
-            $table->char('jam_msk',20);
-            $table->char('jam_plg',20);
+            $table->char('masuk',20);
+            $table->char('pulang',20);
             $table->timestamps();
         });
     }

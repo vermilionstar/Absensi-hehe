@@ -12,7 +12,7 @@
                             <h2>Tambah Data User</h2>
                         </div>
                         <div class="card-body">
-                            <form action="/user/save" method="post">
+                            <form action="/user/simpan" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label for="" class="form-label">Nama</label>
@@ -45,7 +45,7 @@
                                     <label for="" class="form-label">Level</label>
                                     <select name="level" class="form-control" value="{{old('level')}}" id="">
                                         <option value="Admin">Admin</option>
-                                        <option value="superadmin">SuperAdmin</option>
+                                        <option value="Super Admin">Super Admin</option>
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-info text-dark">Save</button>

@@ -12,12 +12,12 @@
                             <h2>Tambah Data Cuti</h2>
                         </div>
                         <div class="card-body">
-                            <form action="/cuti/save" method="post">
+                            <form action="/cuti/simpan" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label for="" class="form-label">ID Karyawan</label>
                                     <select class="form-control" name="id_karyawan" id="id_karyawan">
-                                        @foreach($Karyawan as $k)
+                                        @foreach($karyawan as $k)
                                         <option value="{{$k->id}}">{{$k->id}} - {{$k->nama}}</option>
                                         @endforeach
                                     </select>
@@ -41,9 +41,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="form-label">Jenis Cuti</label>
-                                    <input type="text" name="jenis_cuti" id="" class="form-control @error('jenis_cuti') is-invalid @enderror" placeholder="Masukan Jenis Cuti" value="{{old('jenis_cuti')}}" aria-describedby="helpId">
-                                    @error('jenis_cuti')
+                                    <label for="" class="form-label">Alasan</label>
+                                    <input type="text" name="alasan" id="" class="form-control @error('alasan') is-invalid @enderror" placeholder="Masukan Alasan" value="{{old('alasan')}}" aria-describedby="helpId">
+                                    @error('alasan')
                                     <div class="invalidate-feedback">
                                         {{$message}}
                                     </div>

@@ -25,16 +25,16 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">ID User</label>
-                                    <select class="form-control" name="id_user" id="id_user">
+                                    <select class="form-control" name="id_admin" id="id_admin">
                                         @foreach($user as $u)
-                                        <option value="{{$u->id}}">{{$u->id}} - {{$u->nama}}</option>
+                                        <option value="{{$u->id}}">{{$u->id}} - {{$u->nama_admin}}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Tanggal</label>
-                                    <input type="date" name="tanggal" value="{{$absensi->tanggal}}" id="" class="form-control @error('tanggal') is-invalid @enderror" aria-describedby="helpId">
-                                    @error('tanggal')
+                                    <input type="date" name="tanggall" value="{{$laporan->tanggall}}" id="" class="form-control @error('tanggall') is-invalid @enderror" aria-describedby="helpId">
+                                    @error('tanggall')
                                     <div class="invalidate-feedback">
                                         {{$message}}
                                     </div>
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Status</label>
-                                    <input type="text" name="status" value="{{$absensi->status}}" id="" class="form-control @error('status') is-invalid @enderror" aria-describedby="helpId">
+                                    <input type="text" name="status" value="{{$laporan->status}}" id="" class="form-control @error('status') is-invalid @enderror" aria-describedby="helpId">
                                     @error('status')
                                     <div class="invalidate-feedback">
                                         {{$message}}
@@ -51,7 +51,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Catatan</label>
-                                    <input type="text" name="catatan" value="{{$absensi->catatan}}" id="" class="form-control @error('catatan') is-invalid @enderror" aria-describedby="helpId">
+                                    <input type="text" name="catatan" value="{{$laporan->catatan}}" id="" class="form-control @error('catatan') is-invalid @enderror" aria-describedby="helpId">
                                     @error('catatan')
                                     <div class="invalidate-feedback">
                                         {{$message}}
