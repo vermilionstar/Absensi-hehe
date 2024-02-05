@@ -31,7 +31,7 @@
                                             @foreach ($jadwal as $j)
                                                 <tr align="center">
                                                     <td>{{ $j->id }}</td>
-                                                    <td>{{ $j->karyawan->id}} - {{$j->karyawan->nama}}</td>
+                                                    <td>{{ $j->karyawan->jabatan}} - {{$j->karyawan->nama}}</td>
                                                     <td>{{ $j->tgl_kerja }}</td>
                                                     <td>{{ $j->masuk }}</td>
                                                     <td>{{ $j->pulang }}</td>
