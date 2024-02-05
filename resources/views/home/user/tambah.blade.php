@@ -16,7 +16,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="" class="form-label">Nama</label>
-                                    <input type="text" name="nama_admin" id="" class="form-control @error('nama_admin') is-invalid @enderror" placeholder="Masukan Nama" value="{{old('nama_admin')}}" aria-describedby="helpId">
+                                    <input type="text" name="nama_admin" id="" class="form-control @error('nama_admin') is-invalid @enderror" placeholder="Masukan Nama" value="{{old('nama_admin')}}">
                                     @error('nama_admin')
                                     <div class="invalidate-feedback">
                                         {{$message}}
@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Username</label>
-                                    <input type="text" name="username" id="" class="form-control @error('username') is-invalid @enderror" placeholder="Masukan Username" value="{{old('username')}}" aria-describedby="helpId">
+                                    <input type="text" name="username" id="" class="form-control @error('username') is-invalid @enderror" placeholder="Masukan Username" value="{{old('username')}}">
                                     @error('username')
                                     <div class="invalidate-feedback">
                                         {{$message}}
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Password</label>
-                                    <input type="password" name="password" id="" class="form-control @error('password') is-invalid @enderror" placeholder="Masukan Password" value="{{old('password')}}" aria-describedby="helpId" autofocus>
+                                    <input type="password" name="password" id="" class="form-control @error('password') is-invalid @enderror" placeholder="Masukan Password" value="{{old('password')}}">
                                     @error('password')
                                     <div class="invalidate-feedback">
                                         {{$message}}

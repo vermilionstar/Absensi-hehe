@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Tanggal</label>
-                                    <input type="date" name="tanggal" value="{{$absen->tanggal}}" id="" class="form-control @error('tanggal') is-invalid @enderror" aria-describedby="helpId">
+                                    <input type="date" name="tanggal" value="{{ $absen->tanggal}}" id="" class="form-control @error('tanggal') is-invalid @enderror" aria-describedby="helpId">
                                     @error('tanggal')
                                     <div class="invalidate-feedback">
                                         {{$message}}
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Jam Masuk</label>
-                                    <input type="time" name="jam_masuk" value="{{$absen->jam_masuk}}" id="" class="form-control @error('jam_masuk') is-invalid @enderror" aria-describedby="helpId">
+                                    <input type="time" name="jam_masuk" value="{{ $absen->jam_masuk}}" id="" class="form-control @error('jam_masuk') is-invalid @enderror" aria-describedby="helpId">
                                     @error('jam_masuk')
                                     <div class="invalidate-feedback">
                                         {{$message}}
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Jam Pulang</label>
-                                    <input type="time" name="jam_pulang" value="{{$absen->jam_pulang}}" id="" class="form-control @error('jam_pulang') is-invalid @enderror" aria-describedby="helpId">
+                                    <input type="time" name="jam_pulang" value="{{ $absen->jam_pulang}}" id="" class="form-control @error('jam_pulang') is-invalid @enderror" aria-describedby="helpId">
                                     @error('jam_pulang')
                                     <div class="invalidate-feedback">
                                         {{$message}}
@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Kehadiran</label>
-                                    <input type="text" name="kehadiran" value="{{$absen->kehadiran}}" id="" class="form-control @error('kehadiran') is-invalid @enderror" aria-describedby="helpId">
+                                    <input type="text" name="kehadiran" value="{{ $absen->kehadiran}}" id="" class="form-control @error('kehadiran') is-invalid @enderror" aria-describedby="helpId">
                                     @error('kehadiran')
                                     <div class="invalidate-feedback">
                                         {{$message}}

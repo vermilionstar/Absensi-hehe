@@ -7,6 +7,7 @@ use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\CutiController;
 use App\Http\Controllers\jadwalController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\LoginController;
 
 
 /*
@@ -19,9 +20,13 @@ use App\Http\Controllers\LaporanController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/l', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/PostLogin', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
-
-Route::get('/', function () {
+Route::middleware(['auth'])->group(function () {
+Route::get('/dashboard', function () {
     return view('home.dashboard');
 });
 
@@ -67,4 +72,4 @@ Route::get('/laporan/{id}/edit',[LaporanController::class,'show']);
 Route::post('/laporan/{id}/update',[LaporanController::class,'update']);
 Route::get('/laporan/{id}/hapus',[LaporanController::class,'destroy']);
 
-?>
+});

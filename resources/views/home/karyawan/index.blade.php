@@ -8,11 +8,9 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <center>
-                                    <h3>Data Karyawan</h3>
-                                    <a href="/karyawan/tambah" class="btn btn-primary text-dark">Tambah Data</a>
-                                </center>
+                            <div class="card-header ">
+                                <h2>Data Karyawan</h2>
+                                <a href="/karyawan/tambah" class="btn btn-primary text-dark">Tambah Data</a>
                                 {{-- </div>
                         <div class="card-body bg-gradient-secondary"> --}}
                                 <div class="table-responsive">

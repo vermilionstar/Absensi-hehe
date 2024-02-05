@@ -8,11 +8,9 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                               <center>
-                                <h3>Data Absensi</h3>
-                                <a href="/absen/tambah" class="btn btn-primary">Tambah Data</a>
-                               </center>
+                            <div class="card-header ">
+                                <h2>Data Absensi</h2>
+                                <a href="/absen/tambah" class="btn btn-primary text-dark">Tambah Data</a>
                                 {{-- </div>
                         <div class="card-body bg-gradient-secondary"> --}}
                                 <div class="table-responsive">
@@ -29,7 +27,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($absen as $a)
+                                            @foreach( $absen as $a)
                                                 <tr align="center">
                                                     <td>{{ $a->id }}</td>
                                                     <td>{{ $a->karyawan->jabatan}} - {{ $a->karyawan->nama}}</td>

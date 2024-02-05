@@ -8,9 +8,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <center>
-                                    <h3>Data Cuti</h3>
+                            <div class="card-header ">
+                                <h2>Data Cuti</h2>
                                 <a href="/cuti/tambah" class="btn btn-primary text-dark">Tambah Data</a>
                                 </center>
                                 {{-- </div>
@@ -28,7 +27,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($cuti as $c)
+                                            @foreach($cuti as $c)
                                                 <tr align="center">
                                                     <td>{{ $c->id }}</td>
                                                     <td>{{ $c->karyawan->jabatan}} - {{ $c->karyawan->nama}}</td>

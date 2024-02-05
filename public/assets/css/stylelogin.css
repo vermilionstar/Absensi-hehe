@@ -9,7 +9,7 @@
 
 body {
     background-color: #c9d6ff;
-    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    background: linear-gradient(to right, #545454, #e4e4e4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,7 +62,7 @@ body {
 }
 
 a {
-    color: #074e8c;
+    color: #06111b;
 }
 
 .scrollbar {
@@ -128,24 +128,24 @@ a {
 }
 .btn-primary {
     --bs-btn-color: #000;
-    --bs-btn-bg: #5e72e4;
-    --bs-btn-border-color: #5e72e4;
+    --bs-btn-bg: #1a1d21;
+    --bs-btn-border-color: #454343;
     --bs-btn-hover-color: #000;
-    --bs-btn-hover-bg: #7687e8;
-    --bs-btn-hover-border-color: #6e80e7;
+    --bs-btn-hover-bg: #454343;
+    --bs-btn-hover-border-color: #454343;
     --bs-btn-focus-shadow-rgb: 80, 97, 194;
     --bs-btn-active-color: #000;
-    --bs-btn-active-bg: #7e8ee9;
-    --bs-btn-active-border-color: #3c59fa;
+    --bs-btn-active-bg: #454343;
+    --bs-btn-active-border-color: #454343;
     --bs-btn-active-shadow: none;
     --bs-btn-disabled-color: #000;
-    --bs-btn-disabled-bg: #5e72e4;
-    --bs-btn-disabled-border-color: #5e72e4;
+    --bs-btn-disabled-bg: #454343;
+    --bs-btn-disabled-border-color: #454343;
 }
 
 .container button {
-    background-color: #3c59fa;
-    background: linear-gradient(to right, #041ba1, #652ee6);
+    background-color: #fbfdff;
+    background: linear-gradient(to right, #454343, #000000);
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -159,7 +159,7 @@ a {
 }
 
 .container-fluid button {
-    background-color: #3c59fa;
+    background-color: #454343;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -303,9 +303,9 @@ a {
 }
 
 .toggle {
-    background-color: #3c59fa;
+    background-color: #dfdfdf;
     height: 100%;
-    background: linear-gradient(to right, #041ba1, #652ee6);
+    background: linear-gradient(to right, #858585, #0b0b0b);
     color: #fff;
     position: relative;
     left: -100%;

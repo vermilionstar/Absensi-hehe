@@ -42,13 +42,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="form-label">Alasan</label>
-                                    <input type="text" name="alasan" value="{{$cuti->alasan}}" id="" class="form-control @error('alasan') is-invalid @enderror" aria-describedby="helpId">
-                                    @error('alasan')
-                                    <div class="invalidate-feedback">
-                                        {{$message}}
-                                    </div>
-                                    @enderror
+                                    <label for="" class="form-label">Jenis Cuti</label>
+                                    <input type="text" name=    "alasan" id="" class="form-control" aria-describedby="helpId">
+                                   
                                 </div>
                                
                                 <button type="submit" class="btn btn-info text-dark">Save</button>
