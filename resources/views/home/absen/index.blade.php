@@ -8,13 +8,15 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header bg-white">
-                                <h2>Data Absensi</h2>
-                                <a href="/absensi/tambah" class="btn btn-primary text-dark">Tambah Data</a>
+                            <div class="card-header">
+                               <center>
+                                <h3>Data Absensi</h3>
+                                <a href="/absen/tambah" class="btn btn-primary">Tambah Data</a>
+                               </center>
                                 {{-- </div>
                         <div class="card-body bg-gradient-secondary"> --}}
                                 <div class="table-responsive">
-                                    <table class="table text-dark">
+                                    <table class="table text-white">
                                         <thead>
                                             <tr align="center">
                                                 <th>ID</th>
@@ -27,18 +29,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($absensi as $a)
+                                            @foreach ($absen as $a)
                                                 <tr align="center">
                                                     <td>{{ $a->id }}</td>
-                                                    <td>{{ $a->karyawan->id}} - {{$a->karyawan->nama}}</td>
+                                                    <td>{{ $a->karyawan->jabatan}} - {{ $a->karyawan->nama}}</td>
                                                     <td>{{ $a->tanggal }}</td>
                                                     <td>{{ $a->jam_masuk }}</td>
                                                     <td>{{ $a->jam_pulang }}</td>
                                                     <td>{{ $a->kehadiran }}</td>
                                                     <td>
-                                                        <a href="/absensi/{{ $a->id }}/edit"
+                                                        <a href="/absen/{{ $a->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>
-                                                        <a href="/absensi/{{ $a->id }}/delete"
+                                                        <a href="/absen/{{ $a->id }}/delete"
                                                             class="btn btn-outline-danger"
                                                             onclick="return confirm('Apakah Anda Yakin Ingin Mengahpus ini?')">Delete</a>
                                                     </td>

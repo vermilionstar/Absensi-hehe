@@ -8,18 +8,20 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header bg-white">
-                                <h2>Data Laporan Kehadiran</h2>
-                                <a href="/laporan/tambah" class="btn btn-primary text-dark">Tambah Data</a>
+                            <div class="card-header ">
+                                <center>
+                                    <h3>Data Laporan Kehadiran</h3>
+                                    <a href="/laporan/tambah" class="btn btn-primary text-dark">Tambah Data</a>
+                                </center>
                                 {{-- </div>
                         <div class="card-body bg-gradient-secondary"> --}}
                                 <div class="table-responsive">
-                                    <table class="table text-dark">
+                                    <table class="table text-white">
                                         <thead>
                                             <tr align="center">
                                                 <th>ID</th>
-                                                <th>Id Karyawan</th>
-                                                <th>ID User</th>
+                                                <th>Karyawan</th>
+                                                <th>Admin</th>
                                                 <th>Tanggal</th>
                                                 <th>status</th>
                                                 <th>catatan</th>
@@ -30,9 +32,9 @@
                                             @foreach ($laporan as $l)
                                                 <tr align="center">
                                                     <td>{{ $l->id }}</td>
-                                                    <td>{{ $l->karyawan->id}} - {{$l->karyawan->nama}}</td>
-                                                    <td>{{ $l->user->id}} - {{$l->user->nama}}</td>
-                                                    <td>{{ $l->tanggal }}</td>
+                                                    <td>{{ $l->karyawan->jabatan}} - {{$l->karyawan->nama}}</td>
+                                                    <td>{{ $l->user->level}} - {{$l->user->nama_admin}}</td>
+                                                    <td>{{ $l->tanggall }}</td>
                                                     <td>{{ $l->status }}</td>
                                                     <td>{{ $l->catatan }}</td>
                                                     <td>

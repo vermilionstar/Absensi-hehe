@@ -31,9 +31,9 @@ class JadwalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
         $karyawan = Karyawan::all();
-        return view('home.jadwal.tambah', compact(['karyawan']));
+        return view('home.jadwal.tambah', compact('karyawan'));
     }
 
     /**
@@ -44,8 +44,13 @@ class JadwalController extends Controller
      */
     public function store(Request $request)
     {
-        Jadwal::create($request->all());
-        return redirect('/jadwal');
+            Jadwal::create([
+                'id_karyawan'=> $request->id_karyawan,
+                'tgl_kerja'=> $request->tgl_kerja,
+                'masuk'=> $request->masuk,
+                'pulang'=> $request->pulang,
+                $request->except(['_token']),
+            ]);return redirect('/jadwal');
     }
 
     /**
@@ -82,8 +87,13 @@ class JadwalController extends Controller
     public function update(Request $request, $id)
     {
         $jadwal = Jadwal::find($id);
-        $jadwal->update($request->all());
-        return redirect('/jadwal');
+        $jadwal->update([
+            'id_karyawan'=> $request->id_karyawan,
+            'tgl_kerja'=> $request->tgl_kerja,
+            'masuk'=> $request->masuk,
+            'pulang'=> $request->pulang,
+            $request->except(['_token']),
+        ]);return redirect('/jadwal');
     }
 
     /**
