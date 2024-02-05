@@ -8,6 +8,7 @@ use App\Http\Controllers\CutiController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LaporanController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,7 @@ use App\Http\Controllers\LaporanController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 Route::get('/', function () {
     return view('home.dashboard');
@@ -62,3 +64,5 @@ Route::get('/laporan/tambah',[LaporanController::class,'store']);
 Route::get('/laporan/{id}/edit',[LaporanController::class,'show']);
 Route::post('/laporan/{id}/update',[LaporanController::class,'update']);
 Route::get('/laporan/{id}/hapus',[LaporanController::class,'destroy']);
+
+?>
