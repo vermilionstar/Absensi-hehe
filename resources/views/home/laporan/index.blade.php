@@ -9,10 +9,8 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header ">
-                                <center>
-                                    <h3>Data Laporan Kehadiran</h3>
-                                    <a href="/laporan/tambah" class="btn btn-primary text-dark">Tambah Data</a>
-                                </center>
+                                <h2>Data Laporan Kehadiran</h2>
+                                <a href="/laporan/tambah" class="btn btn-primary text-dark">Tambah Data</a>
                                 {{-- </div>
                         <div class="card-body bg-gradient-secondary"> --}}
                                 <div class="table-responsive">

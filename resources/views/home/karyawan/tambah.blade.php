@@ -14,7 +14,6 @@
                         <div class="card-body">
                             <form action="/karyawan/simpan" method="post">
                                 @csrf
-                                
                                 <div class="form-group">
                                     <label for="" class="form-label">Nama</label>
                                     <input type="text" name="nama" id="" class="form-control @error('nama') is-invalid @enderror" placeholder="Masukan Nama" value="{{old('nama')}}" aria-describedby="helpId">

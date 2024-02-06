@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="{{ asset('assets/img/ABSEN KARYAWAN.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/absen.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/stylelogin.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
@@ -26,7 +26,7 @@
         <div class="form-container sign-in">
             <form action="/PostLogin" method="post" role="form">
                 @csrf
-                <img src="{{ asset('/assets/img/i.png') }}" alt="main_logo">
+                <img src="{{ asset('assets/img/absen.png') }}" alt="main_logo">
                 <h1>Login</h1>
                 <span>Use your username password</span>
                 <input type="username" name="username" placeholder="Username">

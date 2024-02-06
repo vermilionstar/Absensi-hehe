@@ -34,8 +34,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Jam Masuk</label>
-                                    <input type="time" name="masuk" value="{{$jadwal->masuk}}" id="" class="form-control @error('masuk') is-invalid @enderror" aria-describedby="helpId">
-                                    @error('masuk')
+                                    <input type="time" name="jam_msk" value="{{$jadwal->jam_msk}}" id="" class="form-control @error('jam_msk') is-invalid @enderror" aria-describedby="helpId">
+                                    @error('jam_msk')
                                     <div class="invalidate-feedback">
                                         {{$message}}
                                     </div>
@@ -43,8 +43,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Jam Pulang</label>
-                                    <input type="time" name="pulang" value="{{$jadwal->pulang}}" id="" class="form-control @error('pulang') is-invalid @enderror" aria-describedby="helpId">
-                                    @error('pulang')
+                                    <input type="time" name="jam_plg" value="{{$jadwal->jam_plg}}" id="" class="form-control @error('jam_plg') is-invalid @enderror" aria-describedby="helpId">
+                                    @error('jam_plg')
                                     <div class="invalidate-feedback">
                                         {{$message}}
                                     </div>

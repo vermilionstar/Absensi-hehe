@@ -105,7 +105,7 @@ class LaporanController extends Controller
             'catatan'=> $request->catatan,
             $request->except(['_token']),
         ]);
-        return redirect('/laporan');
+        return redirect('/laporan')->with('update', 'data telah diupdate');
     }
 
     /**

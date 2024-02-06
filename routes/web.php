@@ -20,6 +20,10 @@ use App\Http\Controllers\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/l', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/PostLogin', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
 
 // Route::get('/', function () {
@@ -70,4 +74,4 @@ Route::get('/laporan/{id}/edit',[LaporanController::class,'show']);
 Route::post('/laporan/{id}/update',[LaporanController::class,'update']);
 Route::get('/laporan/{id}/hapus',[LaporanController::class,'destroy']);
 
-?>
+// });

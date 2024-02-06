@@ -25,30 +25,17 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Tanggal Mulai</label>
-                                    <input type="date" name="tanggal_mulai" id="" class="form-control @error('tanggal_mulai') is-invalid @enderror" placeholder="Masukan Tanggal Mulai" value="{{old('tanggal_mulai')}}" aria-describedby="helpId">
-                                    @error('tanggal_mulai')
-                                    <div class="invalidate-feedback">
-                                        {{$message}}
-                                    </div>
-                                    @enderror
+                                    <input type="date" name="tanggal_mulai" id="" class="form-control " placeholder="Masukan Tanggal Mulai" >
+                                 
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Tanggal Selesai</label>
-                                    <input type="date" name="tanggal_selesai" id="" class="form-control @error('tanggal_selesai') is-invalid @enderror" placeholder="Masukan Tanggal Selesai" value="{{old('tanggal_selesai')}}" aria-describedby="helpId" >
-                                    @error('tanggal_selesai')
-                                    <div class="invalidate-feedback">
-                                        {{$message}}
-                                    </div>
-                                    @enderror
+                                    <input type="date" name="tanggal_selesai" id="" class="form-control " placeholder="Masukan Tanggal Selesai" >
+                                  
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="form-label">Alasan</label>
-                                    <input type="text" name="alasan" id="" class="form-control @error('alasan') is-invalid @enderror" placeholder="Masukan Alasan" value="{{old('alasan')}}" aria-describedby="helpId">
-                                    @error('alasan')
-                                    <div class="invalidate-feedback">
-                                        {{$message}}
-                                    </div>
-                                    @enderror
+                                    <label for="" class="form-label">Jenis Cuti</label>
+                                    <input type="text" name="alasan" id="" class="form-control " placeholder="Masukan Jenis Cuti">
                                 </div>
                                 <button type="submit" class="btn btn-info text-dark">Save</button>
                                 <a href="/cuti" type="reset" class="btn btn-secondary text-dark">cancel</a>
