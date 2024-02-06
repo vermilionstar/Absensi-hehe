@@ -20,8 +20,9 @@
                                         <thead>
                                             <tr align="center">
                                                 <th>ID</th>
-                                                <th>Karyawan</th>
+                                                <th>Karyawan Hadir</th>
                                                 <th>Admin</th>
+                                                <th>Karyawan Cuti</th>
                                                 <th>Tanggal</th>
                                                 <th>status</th>
                                                 <th>catatan</th>
@@ -34,13 +35,14 @@
                                                     <td>{{ $l->id }}</td>
                                                     <td>{{ $l->karyawan->jabatan}} - {{$l->karyawan->nama}}</td>
                                                     <td>{{ $l->user->level}} - {{$l->user->nama_admin}}</td>
+                                                    <td>{{ $l->cuti->nama_karyawan}}</td>
                                                     <td>{{ $l->tanggall }}</td>
                                                     <td>{{ $l->status }}</td>
                                                     <td>{{ $l->catatan }}</td>
                                                     <td>
                                                         <a href="/laporan/{{ $l->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>
-                                                        <a href="/laporan/{{ $l->id }}/delete"
+                                                        <a href="/laporan/{{ $l->id }}/hapus"
                                                             class="btn btn-outline-danger"
                                                             onclick="return confirm('Apakah Anda Yakin Ingin Mengahpus ini?')">Delete</a>
                                                     </td>

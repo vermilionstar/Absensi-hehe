@@ -7,6 +7,7 @@ use App\Http\Controllers\AbsenController;
 use App\Http\Controllers\CutiController;
 use App\Http\Controllers\jadwalController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -21,9 +22,11 @@ use App\Http\Controllers\LaporanController;
 */
 
 
-Route::get('/', function () {
-    return view('home.dashboard');
-});
+// Route::get('/', function () {
+//     return view('home.dashboard');
+// });
+
+Route::get('/', [DashboardController::class, 'index']);
 
 Route::get('/user',[UserController::class,'index']);
 Route::get('/user/tambah',[UserController::class,'create']);

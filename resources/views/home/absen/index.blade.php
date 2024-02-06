@@ -40,7 +40,7 @@
                                                     <td>
                                                         <a href="/absen/{{ $a->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>
-                                                        <a href="/absen/{{ $a->id }}/delete"
+                                                        <a href="/absen/{{ $a->id }}/hapus"
                                                             class="btn btn-outline-danger"
                                                             onclick="return confirm('Apakah Anda Yakin Ingin Mengahpus ini?')">Delete</a>
                                                     </td>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Laporan extends Model
 {
-    protected $fillable = ['id_karyawan','id_admin','tanggall','status','catatan'];
+    protected $fillable = ['id_karyawan','id_admin','id_cuti','tanggall','status','catatan'];
     public function Laporan(){
         return $this->hasMany(Laporan::class, 'id','id');
     }
@@ -16,5 +16,8 @@ class Laporan extends Model
     }
     public function User(){
         return $this->BelongsTo(User::class, 'id_admin','id');
+    }
+    public function Cuti(){
+        return $this->BelongsTo(Cuti::class, 'id_cuti','id');
     }
 }

@@ -31,14 +31,14 @@
                                             @foreach ($cuti as $c)
                                                 <tr align="center">
                                                     <td>{{ $c->id }}</td>
-                                                    <td>{{ $c->karyawan->jabatan}} - {{ $c->karyawan->nama}}</td>
+                                                    <td>{{ $c->nama_karyawan}}</td>
                                                     <td>{{ $c->tanggal_mulai }}</td>
                                                     <td>{{ $c->tanggal_mulai }}</td>
                                                     <td>{{ $c->alasan }}</td>
                                                     <td>
                                                         <a href="/cuti/{{ $c->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>
-                                                        <a href="/cuti/{{ $c->id }}/delete"
+                                                        <a href="/cuti/{{ $c->id }}/hapus"
                                                             class="btn btn-outline-danger"
                                                             onclick="return confirm('Apakah Anda Yakin Ingin Mengahpus ini?')">Delete</a>
                                                     </td>
