@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Laporan;
 use App\Models\Karyawan;
 use App\Models\User;
+use App\Models\Cuti;
 // use Illuminate\Support\Facades\Auth;
 
 class LaporanController extends Controller
@@ -35,7 +36,8 @@ class LaporanController extends Controller
     {
         $karyawan = Karyawan::all();
         $user = User::all();
-        return view('home.laporan.tambah', compact(['karyawan'], 'user'));
+        $cuti = Cuti::all();
+        return view('home.laporan.tambah', compact(['karyawan'], 'user','cuti'));
     }
 
     /**
@@ -49,6 +51,7 @@ class LaporanController extends Controller
         Laporan::create([
             'id_karyawan'=> $request->id_karyawan,
             'id_admin'=> $request->id_admin,
+            'id_cuti'=> $request->id_cuti,
             'tanggall'=> $request->tanggall,
             'status'=> $request->status,
             'catatan'=> $request->catatan,
@@ -65,10 +68,11 @@ class LaporanController extends Controller
      */
     public function show($id)
     {
+        $cuti = Cuti::all();
         $user = User::all();
         $karyawan = Karyawan::all();
         $laporan = Laporan::find($id);
-        return view('home.laporan.edit', compact(['laporan'], 'karyawan','user'));
+        return view('home.laporan.edit', compact(['laporan'], 'karyawan','user','cuti'));
     }
 
     /**
@@ -95,6 +99,7 @@ class LaporanController extends Controller
         $laporan->update([
             'id_karyawan'=> $request->id_karyawan,
             'id_admin'=> $request->id_admin,
+            'id_cuti'=> $request->id_cuti,
             'tanggall'=> $request->tanggall,
             'status'=> $request->status,
             'catatan'=> $request->catatan,

@@ -15,7 +15,7 @@
                             <form action="/laporan/simpan" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="" class="form-label">ID Karyawan</label>
+                                    <label for="" class="form-label">Karyawan Hadir</label>
                                     <select class="form-control" name="id_karyawan" id="id_karyawan">
                                         @foreach($karyawan as $k)
                                         <option value="{{$k->id}}">{{$k->id}} - {{$k->nama}}</option>
@@ -23,10 +23,18 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="form-label">ID User</label>
+                                    <label for="" class="form-label">Admin</label>
                                     <select class="form-control" name="id_admin" id="id_admin">
                                         @foreach($user as $u)
                                         <option value="{{$u->id}}">{{$u->id}} - {{$u->nama_admin}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="form-label">Karyawan Cuti</label>
+                                    <select class="form-control" name="id_cuti" id="id_cuti">
+                                        @foreach($cuti as $u)
+                                        <option value="{{$u->id}}">{{$u->nama_karyawan}}</option>
                                         @endforeach
                                     </select>
                                 </div>

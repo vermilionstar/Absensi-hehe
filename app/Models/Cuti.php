@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cuti extends Model
 {
-    protected $fillable = ['id_karyawan','tanggal_mulai','tanggal_selesai','alasan'];
+    protected $fillable = ['nama_karyawan','tanggal_mulai','tanggal_selesai','alasan'];
     public function Cuti(){
         return $this->hasMany(Cuti::class, 'id','id');
     }

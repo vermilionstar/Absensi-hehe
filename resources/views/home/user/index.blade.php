@@ -34,7 +34,7 @@
                                                     <td>
                                                         <a href="/user/{{ $u->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>
-                                                        <a href="/user/{{ $u->id }}/delete"
+                                                        <a href="/user/{{ $u->id }}/hapus"
                                                             class="btn btn-outline-danger"
                                                             onclick="return confirm('Apakah Anda Yakin Ingin Mengahpus ini?')">Delete</a>
                                                             <a href="/password/change"

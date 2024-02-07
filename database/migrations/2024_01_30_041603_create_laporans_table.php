@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('id_karyawan');
             $table->integer('id_admin');
+            $table->integer('id_cuti');
             $table->date('tanggall');
             $table->char('status',30);
             $table->text('catatan');

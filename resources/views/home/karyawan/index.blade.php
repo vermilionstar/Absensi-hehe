@@ -38,7 +38,7 @@
                                                     <td>
                                                         <a href="/karyawan/{{ $k->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>
-                                                        <a href="/karyawan/{{ $k->id }}/delete"
+                                                        <a href="/karyawan/{{ $k->id }}/hapus"
                                                             class="btn btn-outline-danger"
                                                             onclick="return confirm('Apakah Anda Yakin Ingin Mengahpus ini?')">Delete</a>
                                                     </td>

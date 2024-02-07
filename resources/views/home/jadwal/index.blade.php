@@ -36,7 +36,7 @@
                                                     <td>
                                                         <a href="/jadwal/{{ $j->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>
-                                                        <a href="/jadwal/{{ $j->id }}/delete"
+                                                        <a href="/jadwal/{{ $j->id }}/hapus"
                                                             class="btn btn-outline-danger"
                                                             onclick="return confirm('Apakah Anda Yakin Ingin Mengahpus ini?')">Delete</a>
                                                     </td>

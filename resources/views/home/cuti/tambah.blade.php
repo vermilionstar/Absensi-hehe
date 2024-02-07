@@ -15,12 +15,13 @@
                             <form action="/cuti/simpan" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="" class="form-label">ID Karyawan</label>
-                                    <select class="form-control" name="id_karyawan" id="id_karyawan">
-                                        @foreach($karyawan as $k)
-                                        <option value="{{$k->id}}">{{$k->id}} - {{$k->nama}}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="" class="form-label">Nama Karyawan</label>
+                                    <input type="text" name="nama_karyawan" id="" class="form-control @error('nama_karyawan') is-invalid @enderror" placeholder="Masukan Nama Karyawan" value="{{old('nama_karyawan')}}" aria-describedby="helpId">
+                                    @error('nama_karyawan')
+                                    <div class="invalidate-feedback">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Tanggal Mulai</label>
