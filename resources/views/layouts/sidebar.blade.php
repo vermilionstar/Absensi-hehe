@@ -1,4 +1,4 @@
- @if(Auth()->user()->level =='Admin')
+ {{-- @if(Auth()->user()->level =='Admin') --}}
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
       <a class="sidebar-brand brand-logo" href="index.html"><img src="{{ asset('assets/img/ABSEN KARYAWAN.png') }}" alt="logo" /></a>
@@ -58,7 +58,7 @@
         <span class="nav-link">Navigation</span>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="/dashboard">
+        <a class="nav-link" href="/">
           <span class="menu-icon">
             <i class="mdi mdi-speedometer"></i>
           </span>
@@ -102,8 +102,8 @@
       </li>
     </ul>
   </nav>
-  @elseif(Auth()->user()->level === 'SuperAdmin')
-  <nav class="sidebar sidebar-offcanvas" id="sidebar">
+  {{-- @elseif(Auth()->user()->level === 'SuperAdmin') --}}
+  {{-- <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
       <a class="sidebar-brand brand-logo" href="index.html"><img src="../assets/images/logo.svg" alt="logo" /></a>
       <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="../assets/images/logo-mini.svg" alt="logo" /></a>
@@ -205,5 +205,5 @@
         </div>
       </li>
     </ul>
-  </nav>
-  @endif
+  </nav> --}}
+  {{-- @endif --}}

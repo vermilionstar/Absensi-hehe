@@ -13,7 +13,7 @@ class LoginController extends Controller
     }
     public function login(Request $request){
         if(Auth::attempt($request->only('username','password'))){
-            return redirect('/dashboard');
+            return redirect('/');
         
         }else{
             return redirect('/login')->with('error','maaf username dan password anda salah');

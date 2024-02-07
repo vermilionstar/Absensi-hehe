@@ -8,6 +8,7 @@ use App\Http\Controllers\CutiController;
 use App\Http\Controllers\jadwalController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
 
 
 /*
@@ -20,16 +21,19 @@ use App\Http\Controllers\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/l', [LoginController::class, 'index']);
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/PostLogin', [LoginController::class, 'login']);
-Route::get('/logout', [LoginController::class, 'logout']);
 
 
 // Route::get('/', function () {
 //     return view('home.dashboard');
 // });
 
+
+Route::get('/', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/PostLogin', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout']);
+
+// Route::middleware(['auth'])->group(function(){
 Route::get('/', [DashboardController::class, 'index']);
 
 Route::get('/user',[UserController::class,'index']);
