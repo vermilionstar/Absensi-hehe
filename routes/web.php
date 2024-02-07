@@ -20,7 +20,7 @@ use App\Http\Controllers\LoginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/l', [LoginController::class, 'index']);
+Route::get('/', [LoginController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/PostLogin', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout']);

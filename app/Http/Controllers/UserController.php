@@ -41,10 +41,10 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
         $validateData = $request->validate([
             'nama_admin' => 'required',
-            'username' => 'required|unique:users,column,except,id',
+            'username' => 'required|unique:users',
             'password' => 'required|min:5|max:20',
             'level' => 'required'
         ]);
