@@ -45,7 +45,7 @@
                                     <label for="" class="form-label">Level</label>
                                     <select name="level" class="form-control" value="{{old('level')}}" id="">
                                         <option value="Admin">Admin</option>
-                                        <option value="Super Admin">Super Admin</option>
+                                        <option value="SuperAdmin">Super Admin</option>
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-info text-dark">Save</button>

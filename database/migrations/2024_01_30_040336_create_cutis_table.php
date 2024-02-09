@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('cutis', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_karyawan');
+            $table->string('nama_karyawan',50);
             $table->date('tanggal_mulai');
             $table->date('tanggal_selesai');
             $table->string('alasan',50);

@@ -14,14 +14,14 @@ class UserController extends Controller
      */
     public function index()
     {
-         if(Auth()->user()->level !='Admin'){
-            Auth::logout();
-            return redirect('/login')->with('error','anda tidak memiliki akses');
+        //  if(Auth()->user()->level !='Admin'){
+        //     Auth::logout();
+        //     return redirect('/login')->with('error','anda tidak memiliki akses');
        
-        }else{
+        // }else{
         $user = User::all();
         return view('home.user.index', compact(['user']));
-           }
+        //    }
     }
 
     /**
@@ -42,12 +42,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     { 
-        $validateData = $request->validate([
-            'nama_admin' => 'required',
-            'username' => 'required|unique:users',
-            'password' => 'required|min:5|max:20',
-            'level' => 'required'
-        ]);
+      
         User::create([
             'nama_admin'=> $request->nama_admin,
             'username'=> $request->username,

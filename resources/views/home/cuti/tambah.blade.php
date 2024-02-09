@@ -15,12 +15,9 @@
                             <form action="/cuti/simpan" method="post">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="" class="form-label">ID Karyawan</label>
-                                    <select class="form-control" name="id_karyawan" id="id_karyawan">
-                                        @foreach($karyawan as $k)
-                                        <option value="{{$k->id}}">{{$k->id}} - {{$k->nama}}</option>
-                                        @endforeach
-                                    </select>
+                                    <label for="" class="form-label">Nama Karyawan</label>
+                                    <input type="text" name="nama_karyawan" id="" class="form-control " placeholder="Masukan Tanggal Mulai" >
+                                 
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Tanggal Mulai</label>

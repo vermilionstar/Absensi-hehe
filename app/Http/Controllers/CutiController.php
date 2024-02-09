@@ -45,7 +45,7 @@ class CutiController extends Controller
     public function store(Request $request)
     {
         Cuti::create([
-            'id_karyawan'=> $request->id_karyawan,
+            'nama_karyawan'=> $request->nama_karyawan,
             'tanggal_mulai'=> $request->tanggal_mulai,
             'tanggal_selesai'=> $request->tanggal_selesai,
             'alasan'=> $request->alasan,
@@ -89,7 +89,7 @@ class CutiController extends Controller
     {
         $cuti = Cuti::find($id);
         $cuti->update([
-            'id_karyawan'=> $request->id_karyawan,
+            'nama_karyawan'=> $request->nama_karyawan,
             'tanggal_mulai'=> $request->tanggal_mulai,
             'tanggal_selesai'=> $request->tanggal_selesai,
             'alasan'=> $request->alasan,

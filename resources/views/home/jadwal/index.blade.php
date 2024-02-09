@@ -31,12 +31,12 @@
                                                     <td>{{ $j->id }}</td>
                                                     <td>{{ $j->karyawan->id}} - {{$j->karyawan->nama}}</td>
                                                     <td>{{ $j->tgl_kerja }}</td>
-                                                    <td>{{ $j->jam_msk }}</td>
-                                                    <td>{{ $j->jam_plg }}</td>
+                                                    <td>{{ $j->masuk }}</td>
+                                                    <td>{{ $j->pulang }}</td>
                                                     <td>
                                                         <a href="/jadwal/{{ $j->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>
-                                                        <a href="/jadwal/{{ $j->id }}/delete"
+                                                        <a href="/jadwal/{{ $j->id }}/hapus"
                                                             class="btn btn-outline-danger"
                                                             onclick="return confirm('Apakah Anda Yakin Ingin Mengahpus ini?')">Delete</a>
                                                     </td>
