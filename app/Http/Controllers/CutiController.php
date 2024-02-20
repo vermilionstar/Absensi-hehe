@@ -51,7 +51,7 @@ class CutiController extends Controller
             'alasan'=> $request->alasan,
             $request->except(['_token']),
         ]);
-        return redirect('/cuti');
+        return redirect('/cuti')->with('message', 'data telah tersimpan');
     }
 
     /**
@@ -95,7 +95,7 @@ class CutiController extends Controller
             'alasan'=> $request->alasan,
         $request->except(['_token']),
     ]);
-    return redirect('/cuti');
+    return redirect('/cuti')->with('update', 'data telah diupdate');
     }
 
     /**
@@ -108,6 +108,6 @@ class CutiController extends Controller
     {
         $cuti = Cuti::find($id);
         $cuti->delete();
-        return redirect('/cuti');
+        return redirect('/cuti')->with('delete', 'data telah dihapus');
     }
 }

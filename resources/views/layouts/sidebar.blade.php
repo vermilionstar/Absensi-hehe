@@ -13,7 +13,12 @@
               <span class="count bg-success"></span>
             </div>
             <div class="profile-name">
+              @if (auth()->user()->can('user_index'))
               <h5 class="mb-0 font-weight-normal">admin</h5>
+              @else
+              <h5 class="mb-0 font-weight-normal">karyawan</h5>
+              @endif
+             
               <span>Gold Member</span>
             </div>
           </div>
@@ -41,15 +46,14 @@
               </div>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item preview-item">
+            <a href="#"  class="dropdown-item preview-item">
               <div class="preview-thumbnail">
                 <div class="preview-icon bg-dark rounded-circle">
                   <i class="mdi mdi-calendar-today text-success"></i>
                 </div>
               </div>
-              <div class="preview-item-content">
-                <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
-              </div>
+             <div>
+             </div>
             </a>
           </div>
         </div>
@@ -75,12 +79,16 @@
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="/user">Kelola Data User</a></li>
+           @if (auth()->user()->can('user_index'))
+           <li class="nav-item"> <a class="nav-link" href="/user">Kelola Data User</a></li>
+           @endif
             <li class="nav-item"> <a class="nav-link" href="/absen">Kelola Data Absensi</a></li>
             <li class="nav-item"> <a class="nav-link" href="/cuti">Kelola Data Cuti</a></li>
             <li class="nav-item"> <a class="nav-link" href="/jadwal">Kelola Data Jadwal</a></li>
             <li class="nav-item"> <a class="nav-link" href="/karyawan">Kelola Data Karyawan</a></li>
+            @if (auth()->user()->can('user_index'))
             <li class="nav-item"> <a class="nav-link" href="/laporan">Kelola Data Laporan</a></li>
+            @endif
           </ul>
         </div>
       </li>
@@ -95,8 +103,25 @@
         </a>
         <div class="collapse" id="auth">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="#"> Setting </a></li>
-            <li class="nav-item"> <a class="nav-link" href="/login"> Logout </a></li>
+            <li class="nav-item"> 
+            
+            <li class="nav-item" :href="route('profile.edit')"><a class="nav-link">
+              {{ __('Profile') }}   </a>
+          </li>
+        </li>
+            {{-- <li class="nav-item"> <a class="nav-link" href="#"> Setting </a></li> --}}
+            {{-- <li  class="nav-item"> <a class="nav-link" href="/"> Logout </a></li> --}}
+            <li class="nav-item"> 
+            <form method="POST" action="{{ route('logout') }}">
+              @csrf
+              <li class="nav-item" :href="route('logout')"
+                      onclick="event.preventDefault();
+                                  this.closest('form').submit();"> <a class="nav-link">
+                                      {{ __('Log Out') }}
+                                    </a>
+            </li>
+          </form>
+        </li>
           </ul>
         </div>
       </li>

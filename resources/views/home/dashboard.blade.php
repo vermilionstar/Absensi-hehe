@@ -79,7 +79,6 @@
                         <th>Tanggal</th>
                         <th>status</th>
                         <th>catatan</th>
-                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -92,13 +91,6 @@
                             <td>{{ $l->tanggall }}</td>
                             <td>{{ $l->status }}</td>
                             <td>{{ $l->catatan }}</td>
-                            <td>
-                                <a href="/laporan/{{ $l->id }}/edit"
-                                    class="btn btn-outline-warning">Edit</a>
-                                <a href="/laporan/{{ $l->id }}/hapus"
-                                    class="btn btn-outline-danger"
-                                    onclick="return confirm('Apakah Anda Yakin Ingin Mengahpus ini?')">Delete</a>
-                            </td>
                         </tr>
                     @endforeach
                 </tbody>

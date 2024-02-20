@@ -128,5 +128,33 @@
     <!-- Custom js for this page -->
     <script src="{{asset('/assets/js/dashboard.js')}}"></script>
     <!-- End custom js for this page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    @if(Session::has('message'))
+
+    <script>
+      toastr.options = {
+        "progressBar" : true,
+      }
+     toastr.success("{{Session::get('message')}}");
+     
+    </script>
+    @elseif(Session::has('update'))
+    <script>
+      toastr.options = {
+        "progressBar" : true,
+      }
+     toastr.info("{{Session::get('update')}}");
+     
+    </script>
+    @elseif(Session::has('delete'))
+    <script>
+      toastr.options = {
+        "progressBar" : true,
+      }
+     toastr.error("{{Session::get('delete')}}");
+     
+    </script>
+    @endif
   </body>
 </html>

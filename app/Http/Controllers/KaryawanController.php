@@ -49,7 +49,7 @@ class KaryawanController extends Controller
             'notlp'=> $request->notlp,
             'alamat'=> $request->alamat,
             $request->except(['_token']),
-        ]);return redirect('/karyawan');
+        ]);return redirect('/karyawan')->with('message', 'data telah tersimpan');
     }
 
     /**
@@ -92,7 +92,7 @@ class KaryawanController extends Controller
             'notlp'=> $request->notlp,
             'alamat'=> $request->alamat,
         $request->except(['_token']),
-    ]);return redirect('/karyawan');
+    ]);return redirect('/karyawan')->with('update', 'data telah update');
     }
 
     /**
@@ -105,6 +105,6 @@ class KaryawanController extends Controller
     {
         $karyawan = Karyawan::find($id);
         $karyawan->delete();
-        return redirect('/karyawan');
+        return redirect('/karyawan')->with('delete', 'data telah dihapus');
     }
 }

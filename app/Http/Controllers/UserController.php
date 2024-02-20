@@ -7,6 +7,8 @@ use App\Models\User;
 use  Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
+  
+
     /**
      * Display a listing of the resource.
      *
@@ -46,6 +48,7 @@ class UserController extends Controller
         User::create([
             'nama_admin'=> $request->nama_admin,
             'username'=> $request->username,
+            'email'=> $request->email,
             'password'=> bcrypt($request->password),
             'level'=> $request->level,
             $request->except(['_token']),
@@ -90,6 +93,7 @@ class UserController extends Controller
         $user->update([
             'nama_admin'=> $request->nama_admin,
             'username'=> $request->username,
+            'email'=> $request->email,
             'password'=> bcrypt($request->password),
             'level'=> $request->level,
         $request->except(['_token']),

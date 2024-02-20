@@ -9,6 +9,13 @@ use App\Models\Karyawan;
 
 class AbsenController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except('logout');
+    }
+    
+    
+    
     /**
      * Display a listing of the resource.
      *
@@ -45,7 +52,7 @@ class AbsenController extends Controller
     public function store(Request $request)
     {
         Absen::create($request->all());
-        return redirect('/absen');
+        return redirect('/absen')->with('message', 'data telah tersimpan');
     }
 
     /**
@@ -83,7 +90,7 @@ class AbsenController extends Controller
     {
         $absen = Absen::find($id);
         $absen->update($request->all());
-        return redirect('/absen');
+        return redirect('/absen')->with('update', 'data telah diupdate');
     }
 
     /**
@@ -96,6 +103,6 @@ class AbsenController extends Controller
     {
         $absen = Absen::find($id);
         $absen->delete();
-        return redirect('/absen');
+        return redirect('/absen')->with('delete', 'data telah dihapus');
     }
 }

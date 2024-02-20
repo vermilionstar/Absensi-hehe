@@ -51,7 +51,7 @@ class JadwalController extends Controller
             'pulang'=> $request->pulang,
             $request->except(['_token']),
         ]);
-        return redirect('/jadwal');
+        return redirect('/jadwal')->with('message', 'data telah tersimpan');
     }
 
     /**
@@ -108,6 +108,6 @@ class JadwalController extends Controller
     {
         $jadwal = Jadwal::find($id);
         $jadwal->delete();
-        return redirect('/jadwal');
+        return redirect('/jadwal')->with('delete', 'data telah dihapus');
     }
 }
