@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Jam Masuk</label>
-                                    <input type="time" name="jam_msk" id="" class="form-control @error('jam_msk') is-invalid @enderror" placeholder="Masukan Jam Masuk" value="{{old('jam_msk')}}" aria-describedby="helpId" >
+                                    <input type="time" name="masuk" id="" class="form-control @error('jam_msk') is-invalid @enderror" placeholder="Masukan Jam Masuk" value="{{old('jam_msk')}}" aria-describedby="helpId" >
                                     @error('jam_msk')
                                     <div class="invalidate-feedback">
                                         {{$message}}
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Jam Pulang</label>
-                                    <input type="time" name="jam_plg" id="" class="form-control @error('jam_plg') is-invalid @enderror" placeholder="Masukan Jam Pulang" value="{{old('jam_plg')}}" aria-describedby="helpId">
+                                    <input type="time" name="pulang" id="" class="form-control @error('jam_plg') is-invalid @enderror" placeholder="Masukan Jam Pulang" value="{{old('jam_plg')}}" aria-describedby="helpId">
                                     @error('jam_plg')
                                     <div class="invalidate-feedback">
                                         {{$message}}

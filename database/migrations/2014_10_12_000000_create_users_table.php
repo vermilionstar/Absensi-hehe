@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('nama_admin',50);
             $table->string('username',30);
+            $table->string('email',50);
             $table->string('password');
-            $table->enum('level',['Admin','SuperAdmin']);
+            $table->enum('level',['Admin','SuperAdmin','karyawan']);
             $table->rememberToken();
             $table->timestamps();
         });

@@ -19,7 +19,7 @@
                                         <thead>
                                             <tr align="center">
                                                 <th>ID</th>
-                                                <th>Id Karyawan</th>
+                                                <th>Nama Karyawan</th>
                                                 <th>Tanggal Mulai</th>
                                                 <th>Tanggal Selesai</th>
                                                 <th>Alasan</th>

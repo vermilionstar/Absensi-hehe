@@ -57,7 +57,7 @@ class LaporanController extends Controller
             'catatan'=> $request->catatan,
             $request->except(['_token']),
         ]);
-        return redirect('/laporan');
+        return redirect('/laporan')->with('message', 'data telah tersimpan');
     }
 
     /**
@@ -118,6 +118,6 @@ class LaporanController extends Controller
     {
         $laporan = Laporan::find($id);
         $laporan->delete();
-        return redirect('/laporan');
+        return redirect('/laporan')->with('delete', 'data telah hapus');
     }
 }

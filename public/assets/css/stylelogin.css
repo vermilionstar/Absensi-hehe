@@ -9,7 +9,9 @@
 
 body {
     background-color: #c9d6ff;
-    background: linear-gradient(to right, #545454, #e4e4e4);
+    background-image: url("https://wallpapers.com/images/hd/plain-black-background-02fh7564l8qq4m6d.jpg");
+    background-color: #cccccc;
+    /* background: linear-gradient(to right, #545454, #e4e4e4); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,7 +24,7 @@ body {
 .container {
     background-color: #fff;
     border-radius: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 20px 20px rgba(0, 0, 1, 1.35);
     position: relative;
     overflow: hidden;
     width: 768px;
@@ -32,7 +34,7 @@ body {
 }
 
 .container-fluid {
-    background-color: #fff;
+    background-color: #545454;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
@@ -144,9 +146,9 @@ a {
 }
 
 .container button {
-    background-color: #fbfdff;
+    background-color: #535353;
     background: linear-gradient(to right, #454343, #000000);
-    color: #fff;
+    color: #575757;
     font-size: 12px;
     padding: 10px 45px;
     border: 1px solid transparent;
@@ -159,7 +161,7 @@ a {
 }
 
 .container-fluid button {
-    background-color: #454343;
+    background-color: #c6c6c6;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -303,9 +305,9 @@ a {
 }
 
 .toggle {
-    background-color: #dfdfdf;
+    background-color: #6b6b6b;
     height: 100%;
-    background: linear-gradient(to right, #858585, #0b0b0b);
+    background: linear-gradient(to right, #000000, #292727);
     color: #fff;
     position: relative;
     left: -100%;

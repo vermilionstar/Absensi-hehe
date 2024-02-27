@@ -20,6 +20,7 @@
                                                 <th>ID</th>
                                                 <th>Nama</th>
                                                 <th>Username</th>
+                                                <th>email</th>
                                                 <th>Level</th>
                                                 <th>Aksi</th>
                                             </tr>
@@ -30,6 +31,7 @@
                                                     <td>{{ $u->id }}</td>
                                                     <td>{{ $u->nama_admin}}</td>
                                                     <td>{{ $u->username }}</td>
+                                                    <td>{{ $u->email }}</td>
                                                     <td>{{ $u->level }}</td>
                                                     <td>
                                                         <a href="/user/{{ $u->id }}/edit"

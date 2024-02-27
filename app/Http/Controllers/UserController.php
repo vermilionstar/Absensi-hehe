@@ -7,6 +7,8 @@ use App\Models\User;
 use  Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
+  
+
     /**
      * Display a listing of the resource.
      *
@@ -41,16 +43,12 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        // $validateData = $request->validate([
-        //     'nama_admin' => 'required',
-        //     'username' => 'required|unique:users,column,except,id',
-        //     'password' => 'required|min:5|max:20',
-        //     'level' => 'required'
-        // ]);
+    { 
+      
         User::create([
             'nama_admin'=> $request->nama_admin,
             'username'=> $request->username,
+            'email'=> $request->email,
             'password'=> bcrypt($request->password),
             'level'=> $request->level,
             $request->except(['_token']),
@@ -95,6 +93,7 @@ class UserController extends Controller
         $user->update([
             'nama_admin'=> $request->nama_admin,
             'username'=> $request->username,
+            'email'=> $request->email,
             'password'=> bcrypt($request->password),
             'level'=> $request->level,
         $request->except(['_token']),

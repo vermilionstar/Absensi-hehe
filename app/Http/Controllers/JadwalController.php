@@ -47,11 +47,11 @@ class JadwalController extends Controller
         Jadwal::create([
             'id_karyawan'=> $request->id_karyawan,
             'tgl_kerja'=> $request->tgl_kerja,
-            'jam_msk'=> $request->jam_msk,
-            'jam_plg'=> $request->jam_plg,
+            'masuk'=> $request->masuk,
+            'pulang'=> $request->pulang,
             $request->except(['_token']),
         ]);
-        return redirect('/jadwal');
+        return redirect('/jadwal')->with('message', 'data telah tersimpan');
     }
 
     /**
@@ -91,8 +91,8 @@ class JadwalController extends Controller
         $jadwal->update([
             'id_karyawan'=> $request->id_karyawan,
             'tgl_kerja'=> $request->tgl_kerja,
-            'jam_msk'=> $request->jam_msk,
-            'jam_plg'=> $request->jam_plg,
+            'masuk'=> $request->masuk,
+            'pulang'=> $request->pulang,
             $request->except(['_token']),
         ]);
         return redirect('/jadwal')->with('update', 'data telah diupdate');
@@ -108,6 +108,6 @@ class JadwalController extends Controller
     {
         $jadwal = Jadwal::find($id);
         $jadwal->delete();
-        return redirect('/jadwal');
+        return redirect('/jadwal')->with('delete', 'data telah dihapus');
     }
 }

@@ -33,6 +33,15 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
+                                    <label for="" class="form-label">Email</label>
+                                    <input type="text" name="email" id="" class="form-control @error('email') is-invalid @enderror" placeholder="Masukan Username" value="{{old('email')}}">
+                                    @error('email')
+                                    <div class="invalidate-feedback">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
                                     <label for="" class="form-label">Password</label>
                                     <input type="password" name="password" id="" class="form-control @error('password') is-invalid @enderror" placeholder="Masukan Password" value="{{old('password')}}">
                                     @error('password')
@@ -45,7 +54,8 @@
                                     <label for="" class="form-label">Level</label>
                                     <select name="level" class="form-control" value="{{old('level')}}" id="">
                                         <option value="Admin">Admin</option>
-                                        <option value="Super Admin">Super Admin</option>
+                                        <option value="SuperAdmin">Super Admin</option>
+                                        <option value="karyawan">Karyawan</option>
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-info text-dark">Save</button>

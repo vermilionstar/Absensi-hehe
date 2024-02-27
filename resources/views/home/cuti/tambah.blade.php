@@ -16,12 +16,8 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="" class="form-label">Nama Karyawan</label>
-                                    <input type="text" name="nama_karyawan" id="" class="form-control @error('nama_karyawan') is-invalid @enderror" placeholder="Masukan Nama Karyawan" value="{{old('nama_karyawan')}}" aria-describedby="helpId">
-                                    @error('nama_karyawan')
-                                    <div class="invalidate-feedback">
-                                        {{$message}}
-                                    </div>
-                                    @enderror
+                                    <input type="text" name="nama_karyawan" id="" class="form-control " placeholder="Masukan Tanggal Mulai" >
+                                 
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Tanggal Mulai</label>

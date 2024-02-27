@@ -47,12 +47,24 @@
             </button>
             
             <ul class="navbar-nav navbar-nav-right">
-           
+              @if (auth()->user()->can('cekout'))
+              <a href="/absen" style="width: 30px heigh" type="button" class="btn btn-primary btn-lg"
+              data-bs-toggle="modal" data-bs-target="#modalId"
+              onclick="prepareModal">Chekout</a>
+              
+              @else
+
+              @endif
+
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                   <div class="navbar-profile">
                     <img class="img-xs rounded-circle" src="{{asset('/assets/images/faces/face15.jpg')}}" alt="">
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+                    @if (auth()->user()->can('user_index'))
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Admin</p>
+                    @else
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Karyawan</p>
+                    @endif
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
                 </a>
@@ -128,5 +140,36 @@
     <!-- Custom js for this page -->
     <script src="{{asset('/assets/js/dashboard.js')}}"></script>
     <!-- End custom js for this page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    @if(Session::has('message'))
+
+    <script>
+      toastr.options = {
+        "progressBar" : true,
+      }
+     toastr.success("{{Session::get('message')}}");
+     
+    </script>
+    @elseif(Session::has('update'))
+    <script>
+      toastr.options = {
+        "progressBar" : true,
+      }
+     toastr.info("{{Session::get('update')}}");
+     
+    </script>
+    @elseif(Session::has('delete'))
+    <script>
+      toastr.options = {
+        "progressBar" : true,
+      }
+     toastr.error("{{Session::get('delete')}}");
+     
+    </script>
+    @endif
+ 
+    
+   
   </body>
 </html>

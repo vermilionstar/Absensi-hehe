@@ -45,13 +45,13 @@ class CutiController extends Controller
     public function store(Request $request)
     {
         Cuti::create([
-            'id_karyawan'=> $request->id_karyawan,
+            'nama_karyawan'=> $request->nama_karyawan,
             'tanggal_mulai'=> $request->tanggal_mulai,
             'tanggal_selesai'=> $request->tanggal_selesai,
             'alasan'=> $request->alasan,
             $request->except(['_token']),
         ]);
-        return redirect('/cuti');
+        return redirect('/cuti')->with('message', 'data telah tersimpan');
     }
 
     /**
@@ -89,13 +89,13 @@ class CutiController extends Controller
     {
         $cuti = Cuti::find($id);
         $cuti->update([
-            'id_karyawan'=> $request->id_karyawan,
+            'nama_karyawan'=> $request->nama_karyawan,
             'tanggal_mulai'=> $request->tanggal_mulai,
             'tanggal_selesai'=> $request->tanggal_selesai,
             'alasan'=> $request->alasan,
         $request->except(['_token']),
     ]);
-    return redirect('/cuti');
+    return redirect('/cuti')->with('update', 'data telah diupdate');
     }
 
     /**
@@ -108,6 +108,6 @@ class CutiController extends Controller
     {
         $cuti = Cuti::find($id);
         $cuti->delete();
-        return redirect('/cuti');
+        return redirect('/cuti')->with('delete', 'data telah dihapus');
     }
 }

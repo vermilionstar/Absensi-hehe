@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Karyawan;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
@@ -16,29 +18,58 @@ class RolePermissionSeeder extends Seeder
      */
     public function run()
     {
-        Permission::create(['name'=>'tambah-user']);
-        Permission::create(['name'=>'edit-user']);
-        Permission::create(['name'=>'hapus-user']);
-        Permission::create(['name'=>'lihat-user']);
+        //role
+        $role_admin = Role::updateOrCreate(
+            [
+                'name' => 'admin'
+            ],
+            ['name' => 'admin']
+        );
+        $role_superadmin = Role::updateOrCreate(
+            [
+                'name' => 'superadmin'
+            ],
+            ['name' => 'superadmin']
+        );
+        $role_karyawan = Role::updateOrCreate(
+            [
+                'name' => 'karyawan'
+            ],
+            ['name' => 'karyawan']
+        );
 
-        Permission::create(['name'=>'tambah-tulisan']);
-        Permission::create(['name'=>'edit-tulisan']);
-        Permission::create(['name'=>'hapus-tulisan']);
-        Permission::create(['name'=>'lihat-tulisan']);
+        //permission
+        $permission = Permission::updateOrCreate(
+            [
+                'name' => 'view_dashboard'
+            ],
+            ['name' => 'view_dashboard']     
+        );
+        $permission2 = Permission::updateOrCreate(
+            [
+                'name' => 'user_index'
+            ],
+            ['name' => 'user_index']     
+        );
+        $permission3 = Permission::updateOrCreate(
+            [
+                'name' => 'cekout'
+            ],
+            ['name' => 'cekout']     
+        );
 
-        Role::create(['name'=>'admin']);
-        Role::create(['name'=>'penulis']);
+        //role has pemission
+        $role_admin->givePermissionTo($permission);
+        $role_admin->givePermissionTo($permission2);
+        $role_superadmin->givePermissionTo($permission2);
+        $role_karyawan->givePermissionTo($permission3);
 
-        $roleAdmin = Role::findByName('admin');
-        $roleAdmin->givePermissionTo('tambah-user');
-        $roleAdmin->givePermissionTo('edit-user');
-        $roleAdmin->givePermissionTo('hapus-user');
-        $roleAdmin->givePermissionTo('lihat-user');
+        $user = User::find(1);
+        $user2 = User::find(2);
+        $user3 = User::find(4);
 
-        $rolePenulis = Role::findByName('penulis');
-        $rolePenulis->givePermissionTo('tambah-tulisan');
-        $rolePenulis->givePermissionTo('edit-tulisan');
-        $rolePenulis->givePermissionTo('hapus-tulisan');
-        $rolePenulis->givePermissionTo('lihat-tulisan');
+        $user->assignRole('admin');
+        $user2->assignRole('superadmin');
+        $user3->assignRole('karyawan');
     }
 }
