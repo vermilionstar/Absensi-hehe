@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Karyawan;
 use  Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
@@ -33,7 +34,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('home.user.tambah');
+        $karyawan = Karyawan::all();
+        return view('home.user.tambah', compact(['karyawan']));
     }
 
     /**
@@ -46,11 +48,11 @@ class UserController extends Controller
     { 
       
         User::create([
+            'id_karyawan'=> $request->id_karyawan,
             'nama_admin'=> $request->nama_admin,
             'username'=> $request->username,
             'email'=> $request->email,
             'password'=> bcrypt($request->password),
-            'level'=> $request->level,
             $request->except(['_token']),
         ]);
         return redirect('/user')->with('message','data telah tersimpan');
@@ -64,8 +66,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        $karyawan = Karyawan::all();
         $user = User::find($id);
-        return view('home.user.edit',compact(['user']));
+        return view('home.user.edit',compact(['user'],'karyawan'));
     }
 
     /**
@@ -91,11 +94,11 @@ class UserController extends Controller
     
         $user = User::find($id);
         $user->update([
+            'id_karyawan'=> $request->id_karyawan,
             'nama_admin'=> $request->nama_admin,
             'username'=> $request->username,
             'email'=> $request->email,
             'password'=> bcrypt($request->password),
-            'level'=> $request->level,
         $request->except(['_token']),
     ]);
     return redirect('/user')->with('update','data telah diupdate');

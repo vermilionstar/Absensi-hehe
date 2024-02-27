@@ -62,7 +62,7 @@
                     <img class="img-xs rounded-circle" src="{{asset('/assets/images/faces/face15.jpg')}}" alt="">
                     @if (auth()->user()->can('user_index'))
                     <p class="mb-0 d-none d-sm-block navbar-profile-name">Admin</p>
-                    @else
+                    @elseif(auth()->user()->can('cekout'))
                     <p class="mb-0 d-none d-sm-block navbar-profile-name">Karyawan</p>
                     @endif
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>

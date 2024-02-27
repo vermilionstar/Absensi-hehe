@@ -14,7 +14,14 @@
                         <div class="card-body">
                             <form action="/user/{{$user->id}}/update" method="post">
                                 @csrf
-                              
+                                <div class="form-group">
+                                    <label for="" class="form-label">ID Karyawan</label>
+                                    <select class="form-control" name="id_karyawan" id="id_karyawan">
+                                        @foreach($karyawan as $k)
+                                        <option value="{{$k->id}}">{{$k->id}} - {{$k->nama}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="form-group">
                                     <label for="" class="form-label">Nama</label>
                                     <input type="text" name="nama_admin" value="{{$user->nama_admin}}" id="" class="form-control @error('nama_admin') is-invalid @enderror"  aria-describedby="helpId">
@@ -42,14 +49,7 @@
                                     </div>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="" class="form-label">Level</label>
-                                    <select name="level" class="form-control" value="{{old('level')}}" id="">
-                                        <option value="Admin">Admin</option>
-                                        <option value="Super Admin">Super Admin</option>
-                                        <option value="karyawan">Karyawan</option>
-                                    </select>
-                                </div>
+                            
                                 <button type="submit" class="btn btn-info text-dark">Save</button>
                                 <a href="/user" type="reset" class="btn btn-secondary text-dark">cancel</a>
                             </form>

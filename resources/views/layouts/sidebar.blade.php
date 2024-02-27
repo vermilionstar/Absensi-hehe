@@ -15,7 +15,7 @@
             <div class="profile-name">
               @if (auth()->user()->can('user_index'))
               <h5 class="mb-0 font-weight-normal">admin</h5>
-              @else
+              @elseif(auth()->user()->can('cekout'))
               <h5 class="mb-0 font-weight-normal">karyawan</h5>
               @endif
              
@@ -60,7 +60,7 @@
           </span>
           <span class="menu-title">Dashboard</span>
         </a>
-        @elseif (auth()->user()->can('cekout'))
+        @elseif(auth()->user()->can('cekout'))
         <a class="nav-link" href="/absen">
           <span class="menu-icon">
             <i class="mdi mdi-speedometer"></i>
@@ -81,21 +81,16 @@
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-           @if (auth()->user()->can('user_index'))
            <li class="nav-item"> <a class="nav-link" href="/user">Kelola Data User</a></li>
-           @endif
             <li class="nav-item"> <a class="nav-link" href="/absen">Kelola Data Absensi</a></li>
             <li class="nav-item"> <a class="nav-link" href="/cuti">Kelola Data Cuti</a></li>
             <li class="nav-item"> <a class="nav-link" href="/jadwal">Kelola Data Jadwal</a></li>
             <li class="nav-item"> <a class="nav-link" href="/karyawan">Kelola Data Karyawan</a></li>
-            @if (auth()->user()->can('user_index'))
             <li class="nav-item"> <a class="nav-link" href="/laporan">Kelola Data Laporan</a></li>
-            @endif
           </ul>
         </div>
       </li>
-      @else
-
+      @elseif(auth()->user()->can('cekout'))
       @endif
 
       <li class="nav-item menu-items">

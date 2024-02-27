@@ -18,10 +18,10 @@
                                         <thead>
                                             <tr align="center">
                                                 <th>ID</th>
+                                                <th>Id Karyawan</th>
                                                 <th>Nama</th>
                                                 <th>Username</th>
                                                 <th>email</th>
-                                                <th>Level</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -29,10 +29,11 @@
                                             @foreach ($user as $u)
                                                 <tr align="center">
                                                     <td>{{ $u->id }}</td>
+                                                    <td>{{ $u->id_karyawan}}</td>
                                                     <td>{{ $u->nama_admin}}</td>
                                                     <td>{{ $u->username }}</td>
                                                     <td>{{ $u->email }}</td>
-                                                    <td>{{ $u->level }}</td>
+                                                   
                                                     <td>
                                                         <a href="/user/{{ $u->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>

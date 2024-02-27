@@ -52,7 +52,7 @@ class AbsenController extends Controller
     public function store(Request $request)
     {
         // cek data hari ini karyawan tsb;
-        dd(auth()->user());
+        dd(auth()->user()->hasRole("karyawan"));
         Absen::create($request->all());
         return redirect('/absen')->with('message', 'data telah tersimpan');
     }

@@ -25,12 +25,6 @@ class RolePermissionSeeder extends Seeder
             ],
             ['name' => 'admin']
         );
-        $role_superadmin = Role::updateOrCreate(
-            [
-                'name' => 'superadmin'
-            ],
-            ['name' => 'superadmin']
-        );
         $role_karyawan = Role::updateOrCreate(
             [
                 'name' => 'karyawan'
@@ -61,15 +55,15 @@ class RolePermissionSeeder extends Seeder
         //role has pemission
         $role_admin->givePermissionTo($permission);
         $role_admin->givePermissionTo($permission2);
-        $role_superadmin->givePermissionTo($permission2);
         $role_karyawan->givePermissionTo($permission3);
 
         $user = User::find(1);
         $user2 = User::find(2);
-        $user3 = User::find(4);
 
         $user->assignRole('admin');
-        $user2->assignRole('superadmin');
-        $user3->assignRole('karyawan');
+        $user2->assignRole('karyawan');
+
+        
+
     }
 }
