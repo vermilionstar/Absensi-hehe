@@ -47,12 +47,24 @@
             </button>
             
             <ul class="navbar-nav navbar-nav-right">
-           
+              @if (auth()->user()->can('cekout'))
+              <a href="/absen" style="width: 30px heigh" type="button" class="btn btn-primary btn-lg"
+              data-bs-toggle="modal" data-bs-target="#modalId"
+              onclick="prepareModal">Chekout</a>
+              
+              @else
+
+              @endif
+
               <li class="nav-item dropdown">
                 <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                   <div class="navbar-profile">
                     <img class="img-xs rounded-circle" src="{{asset('/assets/images/faces/face15.jpg')}}" alt="">
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+                    @if (auth()->user()->can('user_index'))
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Admin</p>
+                    @else
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Karyawan</p>
+                    @endif
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
                 </a>
@@ -156,5 +168,8 @@
      
     </script>
     @endif
+ 
+    
+   
   </body>
 </html>

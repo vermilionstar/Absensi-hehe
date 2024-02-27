@@ -51,12 +51,18 @@ class RolePermissionSeeder extends Seeder
             ],
             ['name' => 'user_index']     
         );
-        
+        $permission3 = Permission::updateOrCreate(
+            [
+                'name' => 'cekout'
+            ],
+            ['name' => 'cekout']     
+        );
 
         //role has pemission
         $role_admin->givePermissionTo($permission);
         $role_admin->givePermissionTo($permission2);
         $role_superadmin->givePermissionTo($permission2);
+        $role_karyawan->givePermissionTo($permission3);
 
         $user = User::find(1);
         $user2 = User::find(2);

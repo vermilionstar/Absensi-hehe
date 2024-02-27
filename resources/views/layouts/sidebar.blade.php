@@ -46,15 +46,6 @@
               </div>
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#"  class="dropdown-item preview-item">
-              <div class="preview-thumbnail">
-                <div class="preview-icon bg-dark rounded-circle">
-                  <i class="mdi mdi-calendar-today text-success"></i>
-                </div>
-              </div>
-             <div>
-             </div>
-            </a>
           </div>
         </div>
       </li>
@@ -62,18 +53,29 @@
         <span class="nav-link">Navigation</span>
       </li>
       <li class="nav-item menu-items">
+        @if (auth()->user()->can('user_index'))
         <a class="nav-link" href="/dashboard">
           <span class="menu-icon">
             <i class="mdi mdi-speedometer"></i>
           </span>
           <span class="menu-title">Dashboard</span>
         </a>
+        @elseif (auth()->user()->can('cekout'))
+        <a class="nav-link" href="/absen">
+          <span class="menu-icon">
+            <i class="mdi mdi-speedometer"></i>
+          </span>
+          <span class="menu-title">Dashboard</span>
+        </a>
+        @endif
       </li>
+      @if (auth()->user()->can('user_index'))
       <li class="nav-item menu-items">
         <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <span class="menu-icon">
             <i class="mdi mdi-laptop"></i>
           </span>
+          
           <span class="menu-title">Menu Utama</span>
           <i class="menu-arrow"></i>
         </a>
@@ -92,6 +94,9 @@
           </ul>
         </div>
       </li>
+      @else
+
+      @endif
 
       <li class="nav-item menu-items">
         <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">

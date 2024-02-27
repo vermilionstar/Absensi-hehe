@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-sm-4 grid-margin">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body"> 
             <h5>Jumlah Karyawan</h5>
             <div class="row">
               <div class="col-8 col-sm-12 col-xl-8 my-auto">
@@ -22,6 +22,7 @@
           </div>
         </div>
       </div>
+      @if (auth()->user()->can('user_index'))
       <div class="col-sm-4 grid-margin">
         <div class="card">
           <div class="card-body">
@@ -41,6 +42,9 @@
           </div>
         </div>
       </div>
+      @else
+      @endif
+      @if (auth()->user()->can('user_index'))
       <div class="col-sm-4 grid-margin">
         <div class="card">
           <div class="card-body">
@@ -60,8 +64,10 @@
           </div>
         </div>
       </div>
+      @else
+      @endif
     </div>
-
+    @if (auth()->user()->can('user_index'))
     <!-- ORDER STATUS -->
     <div class="row ">
       <div class="col-12 grid-margin">
@@ -100,6 +106,8 @@
         </div>
       </div>
     </div>
-
+    {{-- //ABSEN --}}
+    @else
+    @endif
 </div>
 @endsection

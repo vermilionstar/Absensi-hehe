@@ -8,6 +8,8 @@ use App\Http\Controllers\CutiController;
 use App\Http\Controllers\jadwalController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CheckinCheckoutController;
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\hash;
 use Illuminate\Support\Facades\Validator;
@@ -24,13 +26,10 @@ use Illuminate\Support\Facades\Validator;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.home');
 });
 
-
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('role:admin|superadmin|karyawan');
-
-
 
 
 Route::middleware('auth')->group(function () {
