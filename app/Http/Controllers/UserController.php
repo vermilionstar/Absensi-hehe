@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Karyawan;
 use  Illuminate\Support\Facades\Auth;
+
 class UserController extends Controller
 {
-  
+
 
     /**
      * Display a listing of the resource.
@@ -20,7 +21,7 @@ class UserController extends Controller
         //  if(Auth()->user()->level !='Admin'){
         //     Auth::logout();
         //     return redirect('/login')->with('error','anda tidak memiliki akses');
-       
+
         // }else{
         $user = User::all();
         return view('home.user.index', compact(['user']));
@@ -45,17 +46,16 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    { 
-      
+    {
         User::create([
-            'id_karyawan'=> $request->id_karyawan,
-            'nama_admin'=> $request->nama_admin,
-            'username'=> $request->username,
-            'email'=> $request->email,
-            'password'=> bcrypt($request->password),
+            'id_karyawan' => $request->id_karyawan,
+            'nama_admin' => $request->nama_admin,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
             $request->except(['_token']),
         ]);
-        return redirect('/user')->with('message','data telah tersimpan');
+        return redirect('/user')->with('message', 'data telah tersimpan');
     }
 
     /**
@@ -68,7 +68,7 @@ class UserController extends Controller
     {
         $karyawan = Karyawan::all();
         $user = User::find($id);
-        return view('home.user.edit',compact(['user'],'karyawan'));
+        return view('home.user.edit', compact(['user'], 'karyawan'));
     }
 
     /**
@@ -79,7 +79,6 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        
     }
 
     /**
@@ -91,17 +90,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-    
         $user = User::find($id);
         $user->update([
-            'id_karyawan'=> $request->id_karyawan,
-            'nama_admin'=> $request->nama_admin,
-            'username'=> $request->username,
-            'email'=> $request->email,
-            'password'=> bcrypt($request->password),
-        $request->except(['_token']),
-    ]);
-    return redirect('/user')->with('update','data telah diupdate');
+            'id_karyawan' => $request->id_karyawan,
+            'nama_admin' => $request->nama_admin,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            $request->except(['_token']),
+        ]);
+        return redirect('/user')->with('update', 'data telah diupdate');
     }
 
     /**
@@ -114,6 +112,6 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        return redirect('/user')->with('delete','data telah dihapus');
+        return redirect('/user')->with('delete', 'data telah dihapus');
     }
 }

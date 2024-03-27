@@ -10,7 +10,7 @@
                         <div class="card">
                             <div class="card-header ">
                                 <h2>Data Karyawan</h2>
-                                <a href="/karyawan/tambah" class="btn btn-primary text-dark">Tambah Data</a>
+                                <a href="/karyawan/tambah" class="btn btn-outline-primary">Tambah Data</a>
                                 {{-- </div>
                         <div class="card-body bg-gradient-secondary"> --}}
                                 <div class="table-responsive">
@@ -30,7 +30,7 @@
                                             @foreach ($karyawan as $k)
                                                 <tr align="center">
                                                     <td>{{ $k->id }}</td>
-                                                    <td>{{ $k->nama}}</td>
+                                                    <td>{{ $k->nama }}</td>
                                                     <td>{{ $k->jabatan }}</td>
                                                     <td>{{ $k->departemen }}</td>
                                                     <td>{{ $k->notlp }}</td>

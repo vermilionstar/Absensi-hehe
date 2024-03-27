@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Jadwal;
+use App\Models\AbsenMasuk;
 use App\Models\Karyawan;
+use Carbon\carbon;
 // use Illuminate\Support\Facades\Auth;
-
-class JadwalController extends Controller
+Carbon::setTestNow(Carbon::now()->timezone('Asia/Jakarta'));
+class AbsenMasukController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +21,8 @@ class JadwalController extends Controller
         //     Auth::logout();
         //     return redirect('/login')->with('error','Anda Tidak Memiliki Hak Akses, Silahkan Login Kembali');
         // }else{
-        $jadwal = Jadwal::all();
-        return view('home.jadwal.index', compact(['jadwal']));
+        $absenmasuk = AbsenMasuk::all();
+        return view('home.absenmasuk.index', compact(['absenmasuk']));
         // }
     }
 
@@ -31,9 +32,10 @@ class JadwalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
+    {
+
         $karyawan = Karyawan::all();
-        return view('home.jadwal.tambah', compact('karyawan'));
+        return view('home.absenmasuk.tambah', compact(['karyawan']));
     }
 
     /**
@@ -44,14 +46,19 @@ class JadwalController extends Controller
      */
     public function store(Request $request)
     {
-        Jadwal::create([
-            'id_karyawan'=> $request->id_karyawan,
-            'tgl_kerja'=> $request->tgl_kerja,
-            'masuk'=> $request->masuk,
-            'pulang'=> $request->pulang,
-            $request->except(['_token']),
+        // dd(auth()->user());
+        // dd($request->all());
+        $now = Carbon::now();
+        $time = Carbon::now();
+        $keluar = '00:00:00';
+        AbsenMasuk::create([
+            'id_karyawan' => $request->id_karyawan,
+            'tanggal' => $now,
+            'jam_masuk' => $time,
+            'jam_keluar' => $keluar,
+            'keterangan' => 'Sedang Bekerja',
         ]);
-        return redirect('/jadwal')->with('message', 'data telah tersimpan');
+        return redirect('/absenmasuk')->with('success', 'Absen masuk berhasil.');
     }
 
     /**
@@ -63,8 +70,8 @@ class JadwalController extends Controller
     public function show($id)
     {
         $karyawan = Karyawan::all();
-        $jadwal = Jadwal::find($id);
-        return view('home.jadwal.edit', compact(['jadwal'], 'karyawan'));
+        $absenmasuk = AbsenMasuk::find($id);
+        return view('home.absenmasuk.edit', compact(['absenmasuk'], 'karyawan'));
     }
 
     /**
@@ -87,15 +94,9 @@ class JadwalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $jadwal = Jadwal::find($id);
-        $jadwal->update([
-            'id_karyawan'=> $request->id_karyawan,
-            'tgl_kerja'=> $request->tgl_kerja,
-            'masuk'=> $request->masuk,
-            'pulang'=> $request->pulang,
-            $request->except(['_token']),
-        ]);
-        return redirect('/jadwal')->with('update', 'data telah diupdate');
+        $absenmasuk = AbsenMasuk::find($id);
+        $absenmasuk->update($request->all());
+        return redirect('/absenmasuk');
     }
 
     /**
@@ -106,8 +107,14 @@ class JadwalController extends Controller
      */
     public function destroy($id)
     {
-        $jadwal = Jadwal::find($id);
-        $jadwal->delete();
-        return redirect('/jadwal')->with('delete', 'data telah dihapus');
+        $absenmasuk = AbsenMasuk::find($id);
+        $absenmasuk->delete();
+        return redirect('/absenmasuk');
+    }
+
+    public function cetak()
+    {
+        $absenmasuk = AbsenMasuk::all();
+        return view('home.absenmasuk.cetak', compact('absenmasuk'));
     }
 }

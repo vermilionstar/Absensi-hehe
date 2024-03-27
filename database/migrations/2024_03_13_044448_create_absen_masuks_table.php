@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('absens', function (Blueprint $table) {
+        Schema::create('absen_masuks', function (Blueprint $table) {
             $table->id();
             $table->integer('id_karyawan');
             $table->date('tanggal');
-            $table->char('jam_masuk',20);
-            $table->char('jam_pulang',20);
-            $table->text('kehadiran');
+            $table->char('jam_masuk', 20);
+            $table->char('jam_keluar', 20);
+            $table->text('keterangan');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('absens');
+        Schema::dropIfExists('absen_masuks');
     }
 };

@@ -2,187 +2,204 @@
 <html>
 
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-  <title>Home</title>
+    <title>Home</title>
 
-  <!-- slider stylesheet -->
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- slider stylesheet -->
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.css') }}" />
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.css') }}" />
 
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="{{ asset('assets/css/styleesigned.css') }}" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet" />
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('assets/css/styleesigned.css') }}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container pt-1">
-          <a class="navbar-brand">
-            
-                <img src="{{ asset('assets/img/ABSEN KARYAWAN.png') }}" alt="main_logo" style="width:200px;height:50px;"> 
-            
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container pt-1">
+                    <a class="navbar-brand">
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-               
-              <ul class="navbar-nav">
-                @if (Route::has('login'))
-              
-                    @auth
-                    <li class="nav-item">
-                        <a href="{{ url('/dashboard') }}" class="nav-link">Dashboard</a>
-                    </li>
-                    @else
-                    <li class="nav-item">
-                        <a href="{{ route('login') }}" class="nav-link">Log in</a>
-                    </li>
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                            {{-- <a href="{{ route('register') }}" class="nav-link">Register</a> --}}
-                            </li>
-                        @endif
-                    @endauth
-                
-            @endif
-              </ul>
-            
-              <div class="user_option">
-                <a href="">
-                  <img src="images/user.png" alt="">
-                </a>
-                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-                </form>
-              </div>
+                        <img src="{{ asset('assets/img/ABSEN KARYAWAN.png') }}" alt="main_logo"
+                            style="width:200px;height:50px;">
+
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+
+                            <ul class="navbar-nav">
+                                @if (Route::has('login'))
+
+                                    @auth
+                                        <li class="nav-item">
+                                            <a href="{{ url('/dashboard') }}" class="nav-link">Dashboard</a>
+                                        </li>
+                                    @else
+                                        <li class="nav-item">
+                                            <a href="{{ route('login') }}" class="nav-link">Log in</a>
+                                        </li>
+                                        @if (Route::has('register'))
+                                            <li class="nav-item">
+                                                {{-- <a href="{{ route('register') }}" class="nav-link">Register</a> --}}
+                                            </li>
+                                        @endif
+                                    @endauth
+
+                                @endif
+                                {{-- <li class="nav-item">
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                <li class="nav-item" :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                       this.closest('form').submit();">
+                                    <a class="nav-link">
+                                        {{ __('Log Out') }}
+                                    </a>
+                                </li>
+                                </form>
+                                </li> --}}
+                            </ul>
+
+                            <div class="user_option">
+                                <a href="">
+                                    <img src="images/user.png" alt="">
+                                </a>
+                                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
             </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
-    <!-- slider section -->
-    <section class=" slider_section position-relative">
-      <div class="container">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <div class="col">
-                  <div class="detail-box">
-                    <div>
-                      <h2>
-                        welcome to
+        </header>
+        <!-- end header section -->
+        <!-- slider section -->
+        <section class=" slider_section position-relative">
+            <div class="container">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="detail-box">
+                                        <div>
+                                            <h2>
+                                                welcome to
 
-                      </h2>
-                      <h1>
-                    Absen Karyawan
-                      </h1>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                      </p>
-                      {{-- <div class="">
+                                            </h2>
+                                            <h1>
+                                                Absen Karyawan
+                                            </h1>
+                                            <p>
+                                                Sebuah website yang membantu karyawan untuk melakukan absensi
+                                            </p>
+                                            {{-- <div class="">
                         <a href="">
                           Contact us
                         </a>
                       </div> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="detail-box">
+                                        <div>
+                                            <h2>
+                                                welcome to
+
+                                            </h2>
+                                            <h1>
+                                                web agency
+                                            </h1>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut
+                                                labore
+                                            </p>
+                                            <div class="">
+                                                <a href="">
+                                                    Contact us
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="detail-box">
+                                        <div>
+                                            <h2>
+                                                welcome to
+
+                                            </h2>
+                                            <h1>
+                                                web agency
+                                            </h1>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut
+                                                labore
+                                            </p>
+                                            <div class="">
+                                                <a href="">
+                                                    Contact us
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+
             </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col">
-                  <div class="detail-box">
-                    <div>
-                      <h2>
-                        welcome to
+        </section>
+        <!-- end slider section -->
+    </div>
 
-                      </h2>
-                      <h1>
-                        web agency
-                      </h1>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                      </p>
-                      <div class="">
-                        <a href="">
-                          Contact us
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col">
-                  <div class="detail-box">
-                    <div>
-                      <h2>
-                        welcome to
+    <!-- do section -->
 
-                      </h2>
-                      <h1>
-                        web agency
-                      </h1>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                      </p>
-                      <div class="">
-                        <a href="">
-                          Contact us
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <!-- end slider section -->
-  </div>
-
-  <!-- do section -->
-
-  <section class="do_section layout_padding">
+    {{-- <section class="do_section layout_padding">
     <div class="container">
-      {{-- <div class="heading_container">
+      <div class="heading_container">
         <h2>
           What we do
         </h2>
@@ -190,8 +207,8 @@
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna
         </p>
-      </div> --}}
-      {{-- <div class="do_container">
+      </div>
+      <div class="do_container">
         <div class="box arrow-start arrow_bg">
           <div class="img-box">
             <img src="images/d-1.png" alt="">
@@ -242,15 +259,15 @@
             </h6>
           </div>
         </div>
-      </div> --}}
+      </div>
     </div>
-  </section>
+  </section> --}}
 
-  <!-- end do section -->
+    <!-- end do section -->
 
-  <!-- who section -->
+    <!-- who section -->
 
-  <section class="who_section ">
+    {{-- <section class="who_section ">
     <div class="container">
       <div class="row">
         <div class="col-md-5">
@@ -280,13 +297,13 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
-  <!-- end who section -->
+    <!-- end who section -->
 
 
-  <!-- work section -->
-  <section class="work_section layout_padding">
+    <!-- work section -->
+    {{-- <section class="work_section layout_padding">
     <div class="container">
       <div class="heading_container">
         <h2>
@@ -316,12 +333,12 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
-  <!-- end work section -->
+    <!-- end work section -->
 
-  <!-- client section -->
-  <section class="client_section">
+    <!-- client section -->
+    {{-- <section class="client_section">
     <div class="container">
   
       <div class="carousel-wrap ">
@@ -386,12 +403,12 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
-  <!-- end client section -->
+    <!-- end client section -->
 
-  <!-- target section -->
-  <section class="target_section layout_padding2">
+    <!-- target section -->
+    {{-- <section class="target_section layout_padding2">
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-sm-6">
@@ -436,14 +453,14 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
-  <!-- end target section -->
+    <!-- end target section -->
 
 
-  <!-- contact section -->
+    <!-- contact section -->
 
-  <section class="contact_section layout_padding">
+    {{-- <section class="contact_section layout_padding">
     <div class="container">
 
      
@@ -452,172 +469,172 @@
         <img src="images/map-img.png" alt="">
       </div>
     </div>
-  </section>
+  </section> --}}
 
 
-  <!-- end contact section -->
+    <!-- end contact section -->
 
 
-  <!-- info section -->
-  <section class="info_section ">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="info_contact">
-            <h5>
-              About Shop
-            </h5>
-            <div>
-              <div class="img-box">
-                <img src="images/location-white.png" width="18px" alt="">
-              </div>
-              <p>
-                Address
-              </p>
+    <!-- info section -->
+    <section class="info_section ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <h5>
+                            About Shop
+                        </h5>
+                        <div>
+                            <div class="img-box">
+                                <img src="images/location-white.png" width="18px" alt="">
+                            </div>
+                            <p>
+                                Address
+                            </p>
+                        </div>
+                        <div>
+                            <div class="img-box">
+                                <img src="images/telephone-white.png" width="12px" alt="">
+                            </div>
+                            <p>
+                                +01 1234567890
+                            </p>
+                        </div>
+                        <div>
+                            <div class="img-box">
+                                <img src="images/envelope-white.png" width="18px" alt="">
+                            </div>
+                            <p>
+                                demo@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_info">
+                        <h5>
+                            Informations
+                        </h5>
+                        <p>
+                            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="info_insta">
+                        <h5>
+                            Instagram
+                        </h5>
+                        <div class="insta_container">
+                            <div>
+                                <a href="">
+                                    <div class="insta-box b-1">
+                                        <img src="images/insta.png" alt="">
+                                    </div>
+                                </a>
+                                <a href="">
+                                    <div class="insta-box b-2">
+                                        <img src="images/insta.png" alt="">
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div>
+                                <a href="">
+                                    <div class="insta-box b-3">
+                                        <img src="images/insta.png" alt="">
+                                    </div>
+                                </a>
+                                <a href="">
+                                    <div class="insta-box b-4">
+                                        <img src="images/insta.png" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="">
+                                    <div class="insta-box b-3">
+                                        <img src="images/insta.png" alt="">
+                                    </div>
+                                </a>
+                                <a href="">
+                                    <div class="insta-box b-4">
+                                        <img src="images/insta.png" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_form ">
+                        <h5>
+                            Newsletter
+                        </h5>
+                        <form action="">
+                            <input type="email" placeholder="Enter your email">
+                            <button>
+                                Subscribe
+                            </button>
+                        </form>
+                        <div class="social_box">
+                            <a href="">
+                                <img src="images/fb.png" alt="">
+                            </a>
+                            <a href="">
+                                <img src="images/twitter.png" alt="">
+                            </a>
+                            <a href="">
+                                <img src="images/linkedin.png" alt="">
+                            </a>
+                            <a href="">
+                                <img src="images/youtube.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-              <div class="img-box">
-                <img src="images/telephone-white.png" width="12px" alt="">
-              </div>
-              <p>
-                +01 1234567890
-              </p>
-            </div>
-            <div>
-              <div class="img-box">
-                <img src="images/envelope-white.png" width="18px" alt="">
-              </div>
-              <p>
-                demo@gmail.com
-              </p>
-            </div>
-          </div>
         </div>
-        <div class="col-md-3">
-          <div class="info_info">
-            <h5>
-              Informations
-            </h5>
-            <p>
-              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            </p>
-          </div>
-        </div>
+    </section>
 
-        <div class="col-md-3">
-          <div class="info_insta">
-            <h5>
-              Instagram
-            </h5>
-            <div class="insta_container">
-              <div>
-                <a href="">
-                  <div class="insta-box b-1">
-                    <img src="images/insta.png" alt="">
-                  </div>
-                </a>
-                <a href="">
-                  <div class="insta-box b-2">
-                    <img src="images/insta.png" alt="">
-                  </div>
-                </a>
-              </div>
-
-              <div>
-                <a href="">
-                  <div class="insta-box b-3">
-                    <img src="images/insta.png" alt="">
-                  </div>
-                </a>
-                <a href="">
-                  <div class="insta-box b-4">
-                    <img src="images/insta.png" alt="">
-                  </div>
-                </a>
-              </div>
-              <div>
-                <a href="">
-                  <div class="insta-box b-3">
-                    <img src="images/insta.png" alt="">
-                  </div>
-                </a>
-                <a href="">
-                  <div class="insta-box b-4">
-                    <img src="images/insta.png" alt="">
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_form ">
-            <h5>
-              Newsletter
-            </h5>
-            <form action="">
-              <input type="email" placeholder="Enter your email">
-              <button>
-                Subscribe
-              </button>
-            </form>
-            <div class="social_box">
-              <a href="">
-                <img src="images/fb.png" alt="">
-              </a>
-              <a href="">
-                <img src="images/twitter.png" alt="">
-              </a>
-              <a href="">
-                <img src="images/linkedin.png" alt="">
-              </a>
-              <a href="">
-                <img src="images/youtube.png" alt="">
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end info_section -->
+    <!-- end info_section -->
 
 
-  <!-- footer section -->
-  <section class="container-fluid footer_section">
-    <p>
-      &copy; 2020 All Rights Reserved By
-      <a href="https://html.design/">Free Html Templates</a>
-    </p>
-  </section>
-  <!-- footer section -->
+    <!-- footer section -->
+    <section class="container-fluid footer_section">
+        <p>
+            &copy; 2020 All Rights Reserved By
+            <a href="https://html.design/">Free Html Templates</a>
+        </p>
+    </section>
+    <!-- footer section -->
 
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <!-- owl carousel script 
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- owl carousel script
     -->
-  <script type="text/javascript">
-    $(".owl-carousel").owlCarousel({
-      loop: true,
-      margin: 0,
-      navText: [],
-      center: true,
-      autoplay: true,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        1000: {
-          items: 3
-        }
-      }
-    });
-  </script>
-  <!-- end owl carousel script -->
+    <script type="text/javascript">
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 0,
+            navText: [],
+            center: true,
+            autoplay: true,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+    </script>
+    <!-- end owl carousel script -->
 
 </body>
 

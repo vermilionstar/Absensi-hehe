@@ -44,11 +44,17 @@ class CutiController extends Controller
      */
     public function store(Request $request)
     {
+        $validateData = $request->validate([
+            'nama_karyawan' => 'required',
+            'tanggal_mulai' => 'required',
+            'tanggal_selesai' => 'required',
+            'alasan' => 'required',
+        ]);
         Cuti::create([
-            'nama_karyawan'=> $request->nama_karyawan,
-            'tanggal_mulai'=> $request->tanggal_mulai,
-            'tanggal_selesai'=> $request->tanggal_selesai,
-            'alasan'=> $request->alasan,
+            'nama_karyawan' => $request->nama_karyawan,
+            'tanggal_mulai' => $request->tanggal_mulai,
+            'tanggal_selesai' => $request->tanggal_selesai,
+            'alasan' => $request->alasan,
             $request->except(['_token']),
         ]);
         return redirect('/cuti')->with('message', 'data telah tersimpan');
@@ -87,15 +93,21 @@ class CutiController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validateData = $request->validate([
+            'nama_karyawan' => 'required',
+            'tanggal_mulai' => 'required',
+            'tanggal_selesai' => 'required',
+            'alasan' => 'required',
+        ]);
         $cuti = Cuti::find($id);
         $cuti->update([
-            'nama_karyawan'=> $request->nama_karyawan,
-            'tanggal_mulai'=> $request->tanggal_mulai,
-            'tanggal_selesai'=> $request->tanggal_selesai,
-            'alasan'=> $request->alasan,
-        $request->except(['_token']),
-    ]);
-    return redirect('/cuti')->with('update', 'data telah diupdate');
+            'nama_karyawan' => $request->nama_karyawan,
+            'tanggal_mulai' => $request->tanggal_mulai,
+            'tanggal_selesai' => $request->tanggal_selesai,
+            'alasan' => $request->alasan,
+            $request->except(['_token']),
+        ]);
+        return redirect('/cuti')->with('update', 'data telah diupdate');
     }
 
     /**

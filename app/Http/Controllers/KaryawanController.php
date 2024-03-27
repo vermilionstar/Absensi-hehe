@@ -36,20 +36,23 @@ class KaryawanController extends Controller
      */
     public function store(Request $request)
     {
-        // $validateData = $request->validate([
-        //     'nama' => 'required',
-        //     'username' => 'required|unique:users',
-        //     'password' => 'required|min:5|max:20',
-        // ]);
+        $validateData = $request->validate([
+            'nama' => 'required',
+            'jabatan' => 'required',
+            'departemen' => 'required',
+            'notlp' => 'required',
+            'alamat' => 'required',
+        ]);
 
         Karyawan::create([
-            'nama'=> $request->nama,
-            'jabatan'=> $request->jabatan,
-            'departemen'=> $request->departemen,
-            'notlp'=> $request->notlp,
-            'alamat'=> $request->alamat,
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'departemen' => $request->departemen,
+            'notlp' => $request->notlp,
+            'alamat' => $request->alamat,
             $request->except(['_token']),
-        ]);return redirect('/karyawan')->with('message', 'data telah tersimpan');
+        ]);
+        return redirect('/karyawan')->with('message', 'data telah tersimpan');
     }
 
     /**
@@ -61,7 +64,7 @@ class KaryawanController extends Controller
     public function show($id)
     {
         $karyawan = Karyawan::find($id);
-        return view('home.karyawan.edit',compact(['karyawan']));
+        return view('home.karyawan.edit', compact(['karyawan']));
     }
 
     /**
@@ -72,7 +75,6 @@ class KaryawanController extends Controller
      */
     public function edit($id)
     {
-        
     }
 
     /**
@@ -84,15 +86,23 @@ class KaryawanController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validateData = $request->validate([
+            'nama' => 'required',
+            'jabatan' => 'required',
+            'departemen' => 'required',
+            'notlp' => 'required',
+            'alamat' => 'required',
+        ]);
         $karyawan = Karyawan::find($id);
         $karyawan->update([
-            'nama'=> $request->nama,
-            'jabatan'=> $request->jabatan,
-            'departemen'=> $request->departemen,
-            'notlp'=> $request->notlp,
-            'alamat'=> $request->alamat,
-        $request->except(['_token']),
-    ]);return redirect('/karyawan')->with('update', 'data telah update');
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'departemen' => $request->departemen,
+            'notlp' => $request->notlp,
+            'alamat' => $request->alamat,
+            $request->except(['_token']),
+        ]);
+        return redirect('/karyawan')->with('update', 'data telah update');
     }
 
     /**

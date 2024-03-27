@@ -4,13 +4,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Times New Roman", Times, serif;
 }
 
 body {
     background-color: #c9d6ff;
-    background-image: url("https://wallpapers.com/images/hd/plain-black-background-02fh7564l8qq4m6d.jpg");
+    background-image: url("https://img.freepik.com/free-vector/dark-black-background-design-with-stripes_1017-38064.jpg");
     background-color: #cccccc;
+    background-size: cover;
     /* background: linear-gradient(to right, #545454, #e4e4e4); */
     display: flex;
     align-items: center;

@@ -10,7 +10,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h2>Data User</h2>
-                                <a href="/user/tambah" class="btn btn-primary text-dark">Tambah Data</a>
+                                <a href="/user/tambah" class="btn btn-outline-primary">Tambah Data</a>
                                 {{-- </div>
                         <div class="card-body bg-gradient-secondary"> --}}
                                 <div class="table-responsive">
@@ -29,20 +29,19 @@
                                             @foreach ($user as $u)
                                                 <tr align="center">
                                                     <td>{{ $u->id }}</td>
-                                                    <td>{{ $u->id_karyawan}}</td>
-                                                    <td>{{ $u->nama_admin}}</td>
+                                                    <td>{{ $u->id_karyawan }} - {{ $u->nama_admin }}</td>
+                                                    <td>{{ $u->nama_admin }}</td>
                                                     <td>{{ $u->username }}</td>
                                                     <td>{{ $u->email }}</td>
-                                                   
+
                                                     <td>
                                                         <a href="/user/{{ $u->id }}/edit"
                                                             class="btn btn-outline-warning">Edit</a>
                                                         <a href="/user/{{ $u->id }}/hapus"
                                                             class="btn btn-outline-danger"
                                                             onclick="return confirm('Apakah Anda Yakin Ingin Mengahpus ini?')">Delete</a>
-                                                            <a href="/password/change"
-                                                                class="btn btn-outline-primary"
-                                                                >chance</a>
+                                                        <a href="/password/change"
+                                                            class="btn btn-outline-primary">chance</a>
                                                     </td>
                                                 </tr>
                                             @endforeach
